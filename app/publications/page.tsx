@@ -1,16 +1,10 @@
 'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, ExternalLink, FileText, Users, Calendar, Award } from 'lucide-react'
 
 const PublicationItem = ({ publication, index }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: true }}
+  <div
     className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-6 hover:shadow-md transition-shadow"
   >
     <div className="flex justify-between items-start mb-3">
@@ -85,15 +79,11 @@ const PublicationItem = ({ publication, index }: any) => (
         </div>
       </div>
     </div>
-  </motion.div>
+  </div>
 )
 
 const PresentationItem = ({ presentation, index }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: true }}
+  <div
     className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-6 hover:shadow-md transition-shadow"
   >
     <div className="flex justify-between items-start mb-3">
@@ -164,7 +154,7 @@ const PresentationItem = ({ presentation, index }: any) => (
         </div>
       </div>
     )}
-  </motion.div>
+  </div>
 )
 
 export default function Publications() {
@@ -246,10 +236,7 @@ export default function Publications() {
         </Link>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-navy-900 mb-4">Publications & Presentations</h1>
@@ -257,14 +244,10 @@ export default function Publications() {
             Scholarly contributions including journal publications, conference presentations, 
             and ongoing research manuscripts in atmospheric science and environmental data analysis.
           </p>
-        </motion.div>
+        </div>
 
         {/* Publications */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Journal Publications</h2>
@@ -273,14 +256,10 @@ export default function Publications() {
               <PublicationItem key={index} publication={pub} index={index} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Conference Presentations */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Conference Presentations</h2>
@@ -289,25 +268,17 @@ export default function Publications() {
               <PresentationItem key={index} presentation={pres} index={index} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Manuscripts in Preparation */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Manuscripts in Preparation</h2>
           <div className="grid grid-cols-1 gap-6">
             {manuscripts.map((manuscript, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="bg-white rounded-lg shadow-sm border border-gray-100 p-6"
               >
                 <div className="flex justify-between items-start mb-3">
@@ -321,17 +292,13 @@ export default function Publications() {
                 </div>
                 <p className="text-gray-600 text-sm mb-2">Expected: {manuscript.expected}</p>
                 <p className="text-gray-700 text-sm">{manuscript.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Metrics Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Impact</h2>
@@ -353,7 +320,7 @@ export default function Publications() {
               <div className="text-sm text-gray-600">Awards</div>
             </div>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   )

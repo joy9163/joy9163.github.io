@@ -1,15 +1,9 @@
 'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, Mail, MapPin, Phone, Github, Linkedin, BookOpen, Download, User } from 'lucide-react'
 
 const ContactCard = ({ icon: Icon, title, content, link, linkText }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    viewport={{ once: true }}
+  <div
     className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
   >
     <div className="flex items-center gap-3 mb-4">
@@ -31,7 +25,7 @@ const ContactCard = ({ icon: Icon, title, content, link, linkText }: any) => (
         {linkText}
       </Link>
     )}
-  </motion.div>
+  </div>
 )
 
 export default function Contact() {
@@ -100,10 +94,7 @@ export default function Contact() {
         </Link>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-navy-900 mb-4">Get in Touch</h1>
@@ -111,14 +102,10 @@ export default function Contact() {
             I'm always interested in discussing research opportunities, collaborations, 
             or answering questions about my work. Feel free to reach out through any of the channels below.
           </p>
-        </motion.div>
+        </div>
 
         {/* Contact Methods Grid */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Contact Information</h2>
@@ -127,14 +114,10 @@ export default function Contact() {
               <ContactCard key={index} {...method} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Quick Links */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mt-12 text-center"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Quick Links</h2>
@@ -158,7 +141,7 @@ export default function Contact() {
               Download CV
             </Link>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   )

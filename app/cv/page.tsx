@@ -1,20 +1,14 @@
 'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, Download, Mail, MapPin, Calendar, GraduationCap, Award, BookOpen, Users } from 'lucide-react'
 
 const Section = ({ title, children, className = '' }: any) => (
-  <motion.section
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: true }}
+  <section
     className={`mb-8 ${className}`}
   >
     <h2 className="text-2xl font-semibold text-navy-900 mb-4 border-b border-gray-200 pb-2">{title}</h2>
     {children}
-  </motion.section>
+  </section>
 )
 
 const TimelineItem = ({ period, title, subtitle, description, items }: any) => (
@@ -85,10 +79,7 @@ export default function CV() {
         </Link>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-navy-900 mb-4">Curriculum Vitae</h1>
@@ -97,15 +88,13 @@ export default function CV() {
           </p>
           
           {/* Download Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto"
           >
             <Download size={18} />
             Download Full CV (PDF)
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Contact Information */}
         <Section title="Contact Information">
@@ -341,11 +330,7 @@ export default function CV() {
         </Section>
 
         {/* Download Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <div
           className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8 text-center mt-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-4">Complete Academic Profile</h2>
@@ -353,15 +338,13 @@ export default function CV() {
             Download the full PDF version of my curriculum vitae for detailed information including 
             complete publication list, conference presentations, teaching experience, and references.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto"
           >
             <Download size={18} />
             Download Full CV (PDF)
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </div>
     </div>
   )

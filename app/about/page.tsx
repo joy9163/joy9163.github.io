@@ -1,17 +1,9 @@
 'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, MapPin, Calendar, GraduationCap, Globe } from 'lucide-react'
 
 const TimelineItem = ({ year, title, description, institution, location, type }: any) => (
-  <motion.div
-    initial={{ opacity: 0, x: -20 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: true }}
-    className="flex gap-6 mb-8"
-  >
+  <div className="flex gap-6 mb-8">
     <div className="flex flex-col items-center">
       <div className="w-4 h-4 bg-blue-600 rounded-full"></div>
       <div className="w-0.5 h-full bg-gray-200 mt-2"></div>
@@ -38,7 +30,7 @@ const TimelineItem = ({ year, title, description, institution, location, type }:
       )}
       <p className="text-gray-700 leading-relaxed">{description}</p>
     </div>
-  </motion.div>
+  </div>
 )
 
 export default function About() {
@@ -121,10 +113,7 @@ export default function About() {
         </Link>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-navy-900 mb-4">About Me</h1>
@@ -132,14 +121,10 @@ export default function About() {
             An undergraduate researcher passionate about understanding Earth's complex systems through 
             interdisciplinary approaches combining atmospheric science, climate research, and computational methods.
           </p>
-        </motion.div>
+        </div>
 
         {/* Current Focus */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="bg-white rounded-lg shadow-sm p-8 mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Current Focus</h2>
@@ -161,25 +146,17 @@ export default function About() {
               serving as a Student Ambassador for NC State and a Guzheng performer in the university ensemble.
             </p>
           </div>
-        </motion.section>
+        </section>
 
         {/* Research Interests */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Interests</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {researchInterests.map((interest, index) => (
-              <motion.div
+              <div
                 key={interest.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
               >
                 <h3 className="font-semibold text-lg mb-3 text-gray-900">{interest.category}</h3>
@@ -191,17 +168,13 @@ export default function About() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Academic Journey */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Academic Journey</h2>
@@ -210,14 +183,10 @@ export default function About() {
               <TimelineItem key={index} {...item} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Future Aspirations */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-4">Future Aspirations</h2>
@@ -237,7 +206,7 @@ export default function About() {
               diverse perspectives and expertise to address pressing global climate issues.
             </p>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   )

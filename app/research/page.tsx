@@ -1,15 +1,9 @@
 'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, FileText, Calendar, Users } from 'lucide-react'
 
 const ResearchCard = ({ project, index }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * 0.1 }}
-    viewport={{ once: true }}
+  <div
     className="bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden"
   >
     <div className="p-6">
@@ -82,7 +76,7 @@ const ResearchCard = ({ project, index }: any) => (
         </div>
       )}
     </div>
-  </motion.div>
+  </div>
 )
 
 export default function Research() {
@@ -175,10 +169,7 @@ export default function Research() {
         </Link>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-navy-900 mb-4">Research Portfolio</h1>
@@ -187,25 +178,17 @@ export default function Research() {
             and computational methods. Each project combines rigorous scientific inquiry with innovative 
             analytical approaches.
           </p>
-        </motion.div>
+        </div>
 
         {/* Research Themes */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Themes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {researchThemes.map((theme, index) => (
-              <motion.div
+              <div
                 key={theme.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
               >
                 <div className="flex justify-between items-start mb-3">
@@ -215,17 +198,13 @@ export default function Research() {
                   </span>
                 </div>
                 <p className="text-gray-600 text-sm">{theme.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Research Projects */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Projects</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -233,14 +212,10 @@ export default function Research() {
               <ResearchCard key={index} project={project} index={index} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Research Approach */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-4">Research Approach</h2>
@@ -260,7 +235,7 @@ export default function Research() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   )

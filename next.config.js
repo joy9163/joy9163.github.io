@@ -6,7 +6,11 @@ const nextConfig = {
     unoptimized: true
   },
   trailingSlash: true,
-  basePath: ''
+  basePath: '',
+  // Disable React strict mode for better GitHub Pages compatibility
+  reactStrictMode: false,
+  // Disable server features
+  swcMinify: true
 }
 
 module.exports = nextConfig

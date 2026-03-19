@@ -1,16 +1,10 @@
 'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Calendar, MapPin, Award, Users, Music, Globe, Trophy } from 'lucide-react'
 
 const ActivityCard = ({ activity, index }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: true }}
+  <div
     className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
   >
     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
@@ -98,15 +92,11 @@ const ActivityCard = ({ activity, index }: any) => (
         )}
       </div>
     )}
-  </motion.div>
+  </div>
 )
 
 const CompetitionCard = ({ competition, index }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: true }}
+  <div
     className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg shadow-sm border border-blue-100 p-8"
   >
     <div className="flex items-center gap-3 mb-4">
@@ -167,7 +157,7 @@ const CompetitionCard = ({ competition, index }: any) => (
         </div>
       </div>
     )}
-  </motion.div>
+  </div>
 )
 
 export default function Activities() {
@@ -273,10 +263,7 @@ export default function Activities() {
         </Link>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-navy-900 mb-4">Activities & Engagement</h1>
@@ -284,14 +271,10 @@ export default function Activities() {
             Beyond research, I am actively engaged in student leadership, cultural activities, 
             and international competitions that reflect my commitment to global citizenship and interdisciplinary collaboration.
           </p>
-        </motion.div>
+        </div>
 
         {/* Competitions Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6 flex items-center gap-2">
@@ -303,14 +286,10 @@ export default function Activities() {
               <CompetitionCard key={index} competition={competition} index={index} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Extracurricular Activities Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6 flex items-center gap-2">
@@ -322,14 +301,10 @@ export default function Activities() {
               <ActivityCard key={index} activity={activity} index={index} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Volunteering Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-6 flex items-center gap-2">
@@ -345,14 +320,10 @@ export default function Activities() {
             
 
           </div>
-        </motion.section>
+        </section>
 
         {/* Hobbies Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <section
           className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8"
         >
           <h2 className="text-2xl font-semibold text-navy-900 mb-4">Hobbies & Interests</h2>
@@ -379,7 +350,7 @@ export default function Activities() {
               <p className="text-sm text-gray-600">Gym and physical wellness</p>
             </div>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   )
