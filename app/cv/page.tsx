@@ -130,7 +130,7 @@ export default function CV() {
             period="09/2023 - Present"
             title="Bachelor of Science in Atmospheric Science"
             subtitle="Nanjing University, Nanjing, China"
-            description="CGPA: 4.6/5.0 | Ranking: 3/78"
+            description="CGPA: 4.56/5.0 | Ranking: 3/78"
             items={[
               'Core modules: Introduction to Atmospheric Science, Fluid Dynamics, Introduction to Environmental Science, Calculus I & II, Probability Theory and Mathematical Statistics, Ordinary Differential Equations, College Physics I & II, General Chemistry, Linear Algebra, Scientific Computing I',
               'Research Assistant: Nanjing University Climate Lab'
