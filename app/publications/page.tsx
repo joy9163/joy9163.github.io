@@ -210,7 +210,7 @@ export default function Publications() {
     {
       title: 'Characterization of Summer Hourly Extreme Precipitation in the Yangtze River Basin',
       status: 'In Preparation',
-      expected: '2025',
+      expected: '2026',
       description: 'Comprehensive analysis of extreme hourly precipitation events using observational data and CMIP6 model simulations for anthropogenic attribution.'
     },
     {

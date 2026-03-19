@@ -1,0 +1,2 @@
+# Disable Jekyll processing for static site deployment
+# GitHub Pages will serve files as-is
