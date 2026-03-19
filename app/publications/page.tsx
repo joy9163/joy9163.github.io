@@ -183,9 +183,7 @@ export default function Publications() {
       description: 'Presented research on extreme precipitation characterization and anthropogenic attribution analysis using CMIP6 model data.',
       links: {},
       photos: [
-        '/publications/nanjing-forum-2025/photo1.jpg',
-        '/publications/nanjing-forum-2025/photo2.jpg',
-        '/publications/nanjing-forum-2025/photo3.jpg'
+        '/publications/nanjing-forum-2025/photo1.jpg'
       ]
     },
     {

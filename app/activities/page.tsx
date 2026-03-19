@@ -173,7 +173,7 @@ export default function Activities() {
         'Supported cross-cultural communication initiatives'
       ],
       photos: [
-        '/activities/ncsu/photo1.jpg'
+        '/activities/ncsu/photo1.JPG'
       ]
     },
     {
