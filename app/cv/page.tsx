@@ -2,6 +2,16 @@
 import Link from 'next/link'
 import { ArrowLeft, Download, Mail, MapPin, Calendar, GraduationCap, Award, BookOpen, Users } from 'lucide-react'
 
+const CVDownloadLink = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <a
+    href="/CV.pdf"
+    download="Jiayin_Zhang_CV.pdf"
+    className={className}
+  >
+    {children}
+  </a>
+)
+
 const Section = ({ title, children, className = '' }: any) => (
   <section
     className={`mb-8 ${className}`}
@@ -46,11 +56,11 @@ const TimelineItem = ({ period, title, subtitle, description, items }: any) => (
 export default function CV() {
   const skills = {
     technical: [
-      'Python (NumPy, Pandas, Scikit-learn)',
-      'R Statistical Programming (GAMs, ROC Analysis)',
-      'MATLAB for Scientific Computing',
-      'LaTeX Typesetting',
-      'Microsoft Office (PowerPoint, Word, Excel)'
+      'Python',
+      'R',
+      'MATLAB',
+      'LaTeX',
+      'Office (PowerPoint, Word, Excel)'
     ],
     research: [
       'Climate Data Analysis',
@@ -88,12 +98,10 @@ export default function CV() {
           </p>
           
           {/* Download Button */}
-          <button
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto"
-          >
+          <CVDownloadLink className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto cursor-pointer">
             <Download size={18} />
             Download Full CV (PDF)
-          </button>
+          </CVDownloadLink>
         </div>
 
         {/* Contact Information */}
@@ -110,7 +118,7 @@ export default function CV() {
               <MapPin size={18} className="text-gray-500" />
               <div>
                 <div className="text-sm text-gray-600">Location</div>
-                <div className="text-gray-900">Nanjing University, China</div>
+                <div className="text-gray-900">1520 Taihu Avenue, Huqiu District, Suzhou, China</div>
               </div>
             </div>
           </div>
@@ -142,6 +150,18 @@ export default function CV() {
 
         {/* Research Experience */}
         <Section title="Research Experience">
+          <TimelineItem
+            period="12/2025 - Present"
+            title="Shanghai Urban Organic Aerosol Dynamics and Carbon Partitioning Analysis"
+            subtitle="Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, The Hong Kong University of Science and Technology"
+            description="Dynamic Regime Transitions and POC/SOC Partitioning of Urban Organic Aerosols in Shanghai"
+            items={[
+              'Analyzed long-term observational datasets of urban organic aerosols in Shanghai to characterize regime-dependent temporal dynamics and carbon partitioning behavior',
+              'Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behavior across episodes',
+              'Evaluated inferred POC/SOC fractions through literature-based plausibility checks and external consistency analysis, with further plans for LSTM/PINN-based predictive modeling of regime evolution'
+            ]}
+          />
+          
           <TimelineItem
             period="08/2025"
             title="Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition"
@@ -188,6 +208,20 @@ export default function CV() {
           />
         </Section>
 
+        {/* Competitions */}
+        <Section title="Competitions">
+          <TimelineItem
+            period="2025"
+            title="2025 Asian Climate-SDG Technology Innovation Hackathon"
+            subtitle="Finalist"
+            description=""
+            items={[
+              'Invited to showcase the project at a roadshow in Hong Kong and went to Brazil to participate in the UN Climate Change conference (COP30)',
+              'Developed a novel urban digital twin platform designed to safeguard public health against climate-related risks like flooding and epidemics by integrating hydrodynamic, epidemiological, and community intelligence data'
+            ]}
+          />
+        </Section>
+
         {/* Skills */}
         <Section title="Skills & Expertise">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -226,15 +260,39 @@ export default function CV() {
                 ))}
               </ul>
             </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-3 text-gray-900 flex items-center gap-2">
+                <Award size={18} />
+                Hobbies
+              </h3>
+              <ul className="space-y-2">
+                <li className="text-gray-700 text-sm">• Volunteering (200+ hours)</li>
+                <li className="text-gray-700 text-sm">• Badminton</li>
+                <li className="text-gray-700 text-sm">• Gym</li>
+              </ul>
+            </div>
           </div>
         </Section>
 
-        {/* Publications */}
-        <Section title="Selected Publications">
+        {/* Publications & Presentations */}
+        <Section title="Publications & Presentations">
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4 py-2">
               <h3 className="font-semibold text-gray-900">Determining Early Warning Thresholds to Detect Tree Mortality Risk in a Southeastern U.S. Bottomland Hardwood Wetland</h3>
               <p className="text-sm text-gray-600">Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., McNulty, S., & King, J. (2025). Forests, 16(8), 1255. https://doi.org/10.3390/f16081255</p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 className="font-semibold text-gray-900">Characterization of Summer Hourly Extreme Precipitation and Attribution of Anthropogenic Discharge in the Middle and Lower Yangtze River Basin</h3>
+              <p className="text-sm text-gray-600">First Nanjing University Atmospheric Sciences Top Forum, Oral, Nanjing, China (May 2025)</p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 className="font-semibold text-gray-900">Linking Hydrological Stress to Ghost Forest Formation: Thresholds for Tree Mortality in Coastal Ecosystems</h3>
+              <p className="text-sm text-gray-600">Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., & King, J. AmeriFlux Annual Meeting, Tucson, USA (October 2025)</p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 className="font-semibold text-gray-900">Modeling Evapotranspiration Dynamics Across Southeastern U.S. Ecosystems Using Flux Data and Machine Learning</h3>
+              <p className="text-sm text-gray-600">Aguilos, M., Sun, G., Liu, N., Zhang, J., Belgado, M., McNulty, S., & King, J. AGU Annual Meeting, New Orleans, USA (December 2025)</p>
             </div>
           </div>
         </Section>
@@ -338,12 +396,10 @@ export default function CV() {
             Download the full PDF version of my curriculum vitae for detailed information including 
             complete publication list, conference presentations, teaching experience, and references.
           </p>
-          <button
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto"
-          >
+          <CVDownloadLink className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto cursor-pointer">
             <Download size={18} />
             Download Full CV (PDF)
-          </button>
+          </CVDownloadLink>
         </div>
       </div>
     </div>
