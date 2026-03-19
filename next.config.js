@@ -2,10 +2,11 @@
 const nextConfig = {
   // appDir is now the default in Next.js 13+, no need for experimental flag
   output: 'export',
-  distDir: 'dist',
   images: {
     unoptimized: true
-  }
+  },
+  trailingSlash: true,
+  basePath: ''
 }
 
 module.exports = nextConfig
