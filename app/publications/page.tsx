@@ -1,325 +1,127 @@
-'use client'
-import Link from 'next/link'
+import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowLeft, ExternalLink, FileText, Users, Calendar, Award } from 'lucide-react'
+import SiteLayout from '@/components/SiteLayout'
+import { ExternalLink } from 'lucide-react'
 
-const PublicationItem = ({ publication, index }: any) => (
-  <div
-    className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-6 hover:shadow-md transition-shadow"
-  >
-    <div className="flex justify-between items-start mb-3">
-      <div className="flex-1">
-        <h3 className="font-semibold text-lg text-gray-900 mb-2">{publication.title}</h3>
-        
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
-          <div className="flex items-center gap-1">
-            <Users size={14} />
-            {publication.authors}
-          </div>
-          <div className="flex items-center gap-1">
-            <Calendar size={14} />
-            {publication.year}
-          </div>
-          {publication.status && (
-            <span className={`px-2 py-1 rounded-full text-xs ${
-              publication.status === 'Published' ? 'bg-green-100 text-green-800' :
-              publication.status === 'Submitted' ? 'bg-blue-100 text-blue-800' :
-              'bg-yellow-100 text-yellow-800'
-            }`}>
-              {publication.status}
-            </span>
-          )}
-        </div>
-        
-        <p className="text-gray-700 text-sm mb-3">{publication.venue}</p>
-        
-        {publication.abstract && (
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">{publication.abstract}</p>
-        )}
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {publication.keywords.map((keyword: string, idx: number) => (
-            <span 
-              key={idx}
-              className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
-            >
-              {keyword}
-            </span>
-          ))}
-        </div>
-        
-        <div className="flex gap-4">
-          {publication.links.pdf && (
-            <Link 
-              href={publication.links.pdf}
-              className="flex items-center gap-1 text-blue-600 hover:text-blue-800 text-sm"
-            >
-              <FileText size={14} />
-              PDF
-            </Link>
-          )}
-          {publication.links.doi && (
-            <Link 
-              href={publication.links.doi}
-              className="flex items-center gap-1 text-gray-600 hover:text-gray-800 text-sm"
-            >
-              <ExternalLink size={14} />
-              DOI
-            </Link>
-          )}
-          {publication.links.arxiv && (
-            <Link 
-              href={publication.links.arxiv}
-              className="flex items-center gap-1 text-orange-600 hover:text-orange-800 text-sm"
-            >
-              <FileText size={14} />
-              arXiv
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
-  </div>
-)
+export const metadata: Metadata = { title: 'Publications' }
 
-const PresentationItem = ({ presentation, index }: any) => (
-  <div
-    className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-6 hover:shadow-md transition-shadow"
-  >
-    <div className="flex justify-between items-start mb-3">
-      <div className="flex-1">
-        <h3 className="font-semibold text-lg text-gray-900 mb-2">{presentation.title}</h3>
-        
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
-          <div className="flex items-center gap-1">
-            <Calendar size={14} />
-            {presentation.date}
-          </div>
-          <div className="flex items-center gap-1">
-            <Award size={14} />
-            {presentation.type}
-          </div>
-          {presentation.award && (
-            <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">
-              {presentation.award}
-            </span>
-          )}
-        </div>
-        
-        <p className="text-gray-700 text-sm mb-3">{presentation.event}</p>
-        {presentation.location && (
-          <p className="text-gray-600 text-sm mb-4">{presentation.location}</p>
-        )}
-        
-        {presentation.description && (
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">{presentation.description}</p>
-        )}
-        
-        <div className="flex gap-4">
-          {presentation.links.slides && (
-            <Link 
-              href={presentation.links.slides}
-              className="flex items-center gap-1 text-blue-600 hover:text-blue-800 text-sm"
-            >
-              <FileText size={14} />
-              Slides
-            </Link>
-          )}
-          {presentation.links.poster && (
-            <Link 
-              href={presentation.links.poster}
-              className="flex items-center gap-1 text-green-600 hover:text-green-800 text-sm"
-            >
-              <FileText size={14} />
-              Poster
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
-    
-    {/* Presentation Photos */}
-    {presentation.photos && presentation.photos.length > 0 && (
-      <div className="mt-4 pt-4 border-t border-gray-100">
-        <p className="text-sm text-gray-500 mb-3">Event Photos</p>
-        <div className="flex justify-center">
-          <div className="relative w-1/3 aspect-video rounded-lg overflow-hidden bg-gray-100">
-            <Image
-              src={presentation.photos[0]}
-              alt={`${presentation.title} photo`}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    )}
-  </div>
-)
+const journalArticles = [
+  {
+    authors: 'Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., McNulty, S., & King, J.',
+    year: '2025',
+    title:
+      'Determining early warning thresholds to detect tree mortality risk in a southeastern U.S. bottomland hardwood wetland',
+    venue: 'Forests, 16(8), 1255',
+    doi: 'https://doi.org/10.3390/f16081255',
+    summary:
+      'Establishes early-warning thresholds for tree mortality risk in southeastern U.S. bottomland hardwood wetlands using hydrological stress indicators and carbon flux measurements.',
+  },
+]
+
+const presentations = [
+  {
+    authors: 'Zhang, J.',
+    date: 'May 2025',
+    title:
+      'Characterization of summer hourly extreme precipitation and attribution of anthropogenic discharge in the middle and lower Yangtze River Basin',
+    venue: 'First Nanjing University Atmospheric Sciences Top Forum, Nanjing, China',
+    type: 'Oral presentation',
+    photo: '/publications/nanjing-forum-2025/photo1.jpg',
+  },
+  {
+    authors: 'Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., & King, J.',
+    date: 'October 2025',
+    title:
+      'Linking hydrological stress to ghost forest formation: thresholds for tree mortality in coastal ecosystems',
+    venue: 'AmeriFlux Annual Meeting, Tucson, USA',
+    type: 'Poster',
+  },
+  {
+    authors:
+      'Aguilos, M., Sun, G., Liu, N., Zhang, J., Belgado, M., McNulty, S., & King, J.',
+    date: 'December 2025',
+    title:
+      'Modeling evapotranspiration dynamics across southeastern U.S. ecosystems using flux data and machine learning',
+    venue: 'AGU Annual Meeting, New Orleans, USA',
+    type: 'Poster',
+  },
+]
+
+const inPreparation = [
+  {
+    title:
+      'Characterization of summer hourly extreme precipitation in the Yangtze River Basin',
+    expected: 'Expected 2026',
+    summary:
+      'Analysis of extreme hourly precipitation events combining observations with CMIP6 simulations for anthropogenic attribution.',
+  },
+  {
+    title:
+      'Dynamic regime transitions and POC/SOC partitioning of urban organic aerosols in Shanghai',
+    expected: 'Expected 2026',
+    summary:
+      'PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behaviour across episodes.',
+  },
+]
 
 export default function Publications() {
-  const publications = [
-    {
-      title: 'Determining Early Warning Thresholds to Detect Tree Mortality Risk in a Southeastern U.S. Bottomland Hardwood Wetland',
-      authors: 'Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., McNulty, S., & King, J.',
-      year: '2025',
-      venue: 'Forests, 16(8), 1255',
-      status: 'Published',
-      abstract: 'This study establishes early warning thresholds for detecting tree mortality risk in southeastern U.S. bottomland hardwood wetlands using hydrological stress indicators and carbon flux measurements.',
-      keywords: ['Tree Mortality', 'Ghost Forest', 'Wetland', 'Early Warning', 'ROC Analysis'],
-      links: {
-        doi: 'https://doi.org/10.3390/f16081255'
-      }
-    }
-  ]
-
-  const presentations = [
-    {
-      title: 'Characterization of Summer Hourly Extreme Precipitation and Attribution of Anthropogenic Discharge in the Middle and Lower Yangtze River Basin',
-      date: 'May 2025',
-      type: 'Oral Presentation',
-      event: 'First Nanjing University Atmospheric Sciences Top Forum',
-      location: 'Nanjing, China',
-      description: 'Presented research on extreme precipitation characterization and anthropogenic attribution analysis using CMIP6 model data.',
-      links: {},
-      photos: [
-        '/publications/nanjing-forum-2025/photo1.jpg'
-      ]
-    },
-    {
-      title: 'Linking Hydrological Stress to Ghost Forest Formation: Thresholds for Tree Mortality in Coastal Ecosystems',
-      date: 'October 2025',
-      type: 'Poster Presentation',
-      event: 'AmeriFlux Annual Meeting',
-      location: 'Tucson, USA',
-      description: 'Co-authored presentation on establishing early-warning thresholds for tree mortality risk prediction in coastal wetland ecosystems.',
-      links: {}
-    },
-    {
-      title: 'Modeling Evapotranspiration Dynamics Across Southeastern U.S. Ecosystems Using Flux Data and Machine Learning',
-      date: 'December 2025',
-      type: 'Poster Presentation',
-      event: 'AGU Annual Meeting',
-      location: 'New Orleans, USA',
-      description: 'Co-authored presentation on evapotranspiration modeling using machine learning approaches across diverse southeastern U.S. ecosystems.',
-      links: {}
-    }
-  ]
-
-  const manuscripts = [
-    {
-      title: 'Characterization of Summer Hourly Extreme Precipitation in the Yangtze River Basin',
-      status: 'In Preparation',
-      expected: '2026',
-      description: 'Comprehensive analysis of extreme hourly precipitation events using observational data and CMIP6 model simulations for anthropogenic attribution.'
-    },
-    {
-      title: 'Shanghai Urban Organic Aerosol Dynamics and Carbon Partitioning Analysis',
-      status: 'In Preparation',
-      expected: '2026',
-      description: 'Dynamic Regime Transitions and POC/SOC Partitioning of Urban Organic Aerosols in Shanghai. Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behavior across episodes.'
-    }
-  ]
-
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* Back Button */}
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8 transition-colors"
-        >
-          <ArrowLeft size={18} />
-          Back to Home
-        </Link>
+    <SiteLayout
+      title="Publications"
+      lead="Journal articles, conference presentations, and manuscripts in preparation. See also my ORCID profile."
+    >
+      <h2>Journal articles</h2>
+      <ul className="archive__list">
+        {journalArticles.map((item) => (
+          <li className="archive__item" key={item.title}>
+            <h3 className="archive__item-title">
+              <a href={item.doi} target="_blank" rel="noreferrer noopener">
+                {item.title}
+              </a>
+            </h3>
+            <p className="archive__item-meta">
+              {item.authors} ({item.year}). <em>{item.venue}</em>.
+            </p>
+            <p className="archive__item-excerpt">{item.summary}</p>
+            <div className="archive__item-links">
+              <a href={item.doi} target="_blank" rel="noreferrer noopener">
+                <ExternalLink size={14} />
+                doi.org/10.3390/f16081255
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        {/* Header */}
-        <div
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-bold text-navy-900 mb-4">Publications & Presentations</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Scholarly contributions including journal publications, conference presentations, 
-            and ongoing research manuscripts in atmospheric science and environmental data analysis.
-          </p>
-        </div>
-
-        {/* Publications */}
-        <section
-          className="mb-12"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-6">Journal Publications</h2>
-          <div className="space-y-4">
-            {publications.map((pub, index) => (
-              <PublicationItem key={index} publication={pub} index={index} />
-            ))}
-          </div>
-        </section>
-
-        {/* Conference Presentations */}
-        <section
-          className="mb-12"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-6">Conference Presentations</h2>
-          <div className="space-y-4">
-            {presentations.map((pres, index) => (
-              <PresentationItem key={index} presentation={pres} index={index} />
-            ))}
-          </div>
-        </section>
-
-        {/* Manuscripts in Preparation */}
-        <section
-          className="mb-12"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-6">Manuscripts in Preparation</h2>
-          <div className="grid grid-cols-1 gap-6">
-            {manuscripts.map((manuscript, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-sm border border-gray-100 p-6"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-semibold text-lg text-gray-900">{manuscript.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-sm ${
-                    manuscript.status === 'Advanced Draft' ? 'bg-blue-100 text-blue-800' :
-                    'bg-yellow-100 text-yellow-800'
-                  }`}>
-                    {manuscript.status}
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm mb-2">Expected: {manuscript.expected}</p>
-                <p className="text-gray-700 text-sm">{manuscript.description}</p>
+      <h2>Conference presentations</h2>
+      <ul className="archive__list">
+        {presentations.map((item) => (
+          <li className="archive__item" key={item.title}>
+            <h3 className="archive__item-title">{item.title}</h3>
+            <p className="archive__item-meta">
+              {item.authors} · <em>{item.venue}</em> · {item.type} · {item.date}
+            </p>
+            {item.photo && (
+              <div className="photo-grid photo-grid--1">
+                <figure>
+                  <Image src={item.photo} alt={item.title} width={720} height={540} />
+                </figure>
               </div>
-            ))}
-          </div>
-        </section>
+            )}
+          </li>
+        ))}
+      </ul>
 
-        {/* Metrics Section */}
-        <section
-          className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Impact</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">2</div>
-              <div className="text-sm text-gray-600">Publications</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">3</div>
-              <div className="text-sm text-gray-600">Presentations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-600 mb-2">3</div>
-              <div className="text-sm text-gray-600">Manuscripts</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">1</div>
-              <div className="text-sm text-gray-600">Awards</div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+      <h2>Manuscripts in preparation</h2>
+      <ul className="archive__list">
+        {inPreparation.map((item) => (
+          <li className="archive__item" key={item.title}>
+            <h3 className="archive__item-title">{item.title}</h3>
+            <p className="archive__item-meta">In preparation · {item.expected}</p>
+            <p className="archive__item-excerpt">{item.summary}</p>
+          </li>
+        ))}
+      </ul>
+    </SiteLayout>
   )
 }

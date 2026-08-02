@@ -1,242 +1,166 @@
-'use client'
-import Link from 'next/link'
-import { ArrowLeft, ExternalLink, FileText, Calendar, Users } from 'lucide-react'
+import type { Metadata } from 'next'
+import SiteLayout from '@/components/SiteLayout'
+import { FileText, Image as ImageIcon } from 'lucide-react'
 
-const ResearchCard = ({ project, index }: any) => (
-  <div
-    className="bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden"
-  >
-    <div className="p-6">
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.categories.map((category: string, idx: number) => (
-          <span 
-            key={idx}
-            className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium"
-          >
-            {category}
-          </span>
-        ))}
-      </div>
-      
-      <h3 className="text-xl font-semibold text-gray-900 mb-3">{project.title}</h3>
-      
-      <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-        <div className="flex items-center gap-1">
-          <Calendar size={14} />
-          {project.time}
-        </div>
-        <div className="flex items-center gap-1">
-          <Users size={14} />
-          {project.role}
-        </div>
-      </div>
-      
-      <p className="text-gray-700 leading-relaxed mb-4">{project.description}</p>
-      
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.keywords.map((keyword: string, idx: number) => (
-          <span 
-            key={idx}
-            className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
-          >
-            {keyword}
-          </span>
-        ))}
-      </div>
-      
-      {project.links && (
-        <div className="flex gap-3 pt-4 border-t border-gray-100">
-          {project.links.paper && (
-            <Link 
-              href={project.links.paper}
-              className="flex items-center gap-1 text-blue-600 hover:text-blue-800 text-sm"
-            >
-              <FileText size={14} />
-              Paper
-            </Link>
-          )}
-          {project.links.poster && (
-            <Link 
-              href={project.links.poster}
-              className="flex items-center gap-1 text-purple-600 hover:text-purple-800 text-sm"
-            >
-              <FileText size={14} />
-              Poster
-            </Link>
-          )}
-          {project.links.demo && (
-            <Link 
-              href={project.links.demo}
-              className="flex items-center gap-1 text-green-600 hover:text-green-800 text-sm"
-            >
-              <ExternalLink size={14} />
-              Demo
-            </Link>
-          )}
-        </div>
-      )}
-    </div>
-  </div>
-)
+export const metadata: Metadata = { title: 'Research' }
+
+type Project = {
+  title: string
+  period: string
+  role: string
+  advisor?: string
+  affiliation?: string
+  description: string
+  keywords: string[]
+  links?: { label: string; href: string; kind: 'paper' | 'poster' }[]
+}
+
+const projects: Project[] = [
+  {
+    title: 'Dynamic regime transitions and POC/SOC partitioning of urban organic aerosols in Shanghai',
+    period: '12/2025 – Present',
+    role: 'Research Assistant',
+    advisor: 'Prof. Jianzhen Yu and Prof. Lixue Cheng',
+    affiliation: 'The Hong Kong University of Science and Technology',
+    description:
+      'Analysing long-term observations of urban organic aerosol to characterise regime-dependent temporal dynamics and carbon partitioning. Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, and quantified residence time, stationary distribution, and switching behaviour across pollution episodes. Inferred POC/SOC fractions are evaluated through literature-based plausibility checks, with planned LSTM/PINN modelling of regime evolution.',
+    keywords: ['Organic aerosol', 'PCA-GMM', 'POC/SOC partitioning', 'Markov transition matrix', 'Shanghai'],
+  },
+  {
+    title: 'Investigation of global multi-site particle number size distribution',
+    period: '08/2025',
+    role: 'Research Assistant',
+    advisor: 'Prof. Chao Yan',
+    affiliation:
+      'Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition, Nanjing–Helsinki Institute',
+    description:
+      'Analysed particle size distribution data from 16 long-term global stations (ARM and EBAS databases) using a nano-ranking approach to identify environmental variations. Conducted preliminary growth rate (GR), formation rate (J), and general dynamic equation (GDE) analyses.',
+    keywords: ['Particle number size distribution', 'New particle formation', 'ARM', 'EBAS', 'Growth rate'],
+  },
+  {
+    title:
+      'Characterization of summer hourly extreme precipitation and attribution of anthropogenic discharge in the middle and lower Yangtze River Basin',
+    period: '11/2024 – 07/2025',
+    role: 'Lead Researcher',
+    advisor: 'Prof. Anning Huang',
+    affiliation:
+      'College Student Innovation and Entrepreneurship Program (provincial level), Nanjing University',
+    description:
+      'Investigated the spatiotemporal characteristics of extreme hourly precipitation events in the Yangtze River Basin, and conducted attribution analysis with CMIP6 model output to quantify the contribution of anthropogenic emissions.',
+    keywords: ['Extreme precipitation', 'CMIP6', 'Detection & attribution', 'Yangtze River Basin'],
+  },
+  {
+    title:
+      'Irreversible impacts of sea level rise and prolonged inundation on carbon fluxes and tree mortality: drivers of ghost forest formation',
+    period: '01/2025 – 02/2025',
+    role: 'Research Assistant',
+    advisor: 'Prof. Maricar Aguilos',
+    affiliation:
+      'GEARS Program, Department of Forestry and Environmental Resources, North Carolina State University',
+    description:
+      'Applied generalized additive models (GAMs), Mann–Kendall trend tests, and regression analyses in R to identify hydrological and carbon-flux drivers of tree mortality. Used ROC analysis to establish early-warning thresholds and evaluate classification performance (AUC) for mortality risk prediction.',
+    keywords: ['Ghost forest', 'GAMs', 'ROC analysis', 'Carbon flux', 'Tree mortality'],
+    links: [
+      { label: 'Paper (Forests, 2025)', href: 'https://doi.org/10.3390/f16081255', kind: 'paper' },
+      { label: 'Poster', href: '/posters/ncsu.PNG', kind: 'poster' },
+    ],
+  },
+  {
+    title: 'Effects of thermal anomalies over the Tibetan Plateau on the Southern Hemisphere',
+    period: '04/2024 – 10/2024',
+    role: 'Lead Researcher',
+    advisor: 'Prof. Yang Zhang',
+    affiliation:
+      'Early Research Training Program "Golden Seed", School of Atmospheric Sciences, Nanjing University',
+    description:
+      'Visualised 2-metre temperature, geopotential height, and wind fields in MATLAB, then applied linear regression and random forest models to analyse relationships among key climate variables. Awarded first place with an "Excellent" rating in the final evaluation.',
+    keywords: ['Tibetan Plateau', 'Teleconnections', 'Random forest', 'MATLAB'],
+    links: [
+      {
+        label: 'Poster (PDF)',
+        href: '/posters/金种子项目_海报（终稿）.pptx.pdf',
+        kind: 'poster',
+      },
+    ],
+  },
+]
+
+const themes = [
+  {
+    name: 'Atmospheric chemistry',
+    description:
+      'Chemical processes in the atmosphere, particle number size distributions, aerosol dynamics, and their consequences for climate and air quality.',
+  },
+  {
+    name: 'Climate extremes',
+    description:
+      'Extreme weather and climate events — their spatiotemporal characteristics, anthropogenic attribution, and future projection with CMIP6 models.',
+  },
+  {
+    name: 'Environmental data science',
+    description:
+      'Computational and statistical frameworks for environmental data in R, Python, and MATLAB, with an emphasis on reproducibility and physical interpretability.',
+  },
+]
 
 export default function Research() {
-  const researchProjects = [
-    {
-      title: 'Investigation on Global Multi-site Particle Number Size Distribution',
-      time: '08/2025',
-      role: 'Research Assistant',
-      categories: ['Atmospheric Chemistry', 'Field Research'],
-      keywords: ['Particle Size Distribution', 'ARM Database', 'EBAS Database', 'Growth Rate Analysis'],
-      description: 'Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition. Analyzed particle size distribution data from 16 long-term global stations (from ARM & EBAS database) using a nano-ranking approach to identify environmental variations. Conducted preliminary growth rate (GR), formation rate (J), and GDE analyses.',
-      links: {}
-    },
-    {
-      title: 'Shanghai Urban Organic Aerosol Dynamics and Carbon Partitioning Analysis',
-      time: '12/2025 - Present',
-      role: 'Research Assistant',
-      categories: ['Atmospheric Chemistry', 'Environmental Data Science', 'Machine Learning'],
-      keywords: ['Organic Aerosol', 'PCA-GMM', 'POC/SOC Partitioning', 'Shanghai'],
-      description: 'Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes. Quantified residence time, stationary distribution, and switching behavior across pollution episodes. Investigated primary organic carbon (POC) and secondary organic carbon (SOC) partitioning mechanisms in urban Shanghai.',
-      links: {}
-    },
-    {
-      title: 'Characterization of Summer Hourly Extreme Precipitation and Attribution of Anthropogenic Discharge',
-      time: '11/2024 - 07/2025',
-      role: 'Lead Researcher',
-      categories: ['Climate Extremes', 'Environmental Data Science'],
-      keywords: ['Extreme Precipitation', 'CMIP6', 'Attribution Analysis', 'Yangtze River Basin'],
-      description: 'College Student Innovation and Entrepreneurship Program (Provincial-level). Investigated spatiotemporal characteristics of extreme hourly precipitation events in the Yangtze River. Conducted attribution analysis using CMIP6 model data to quantifying the impact of anthropogenic emissions.',
-      links: {}
-    },
-    {
-      title: 'Irreversible Impacts of Sea Level Rise and Prolonged Inundation on Carbon Fluxes and Tree Mortality',
-      time: '01/2025 - 02/2025',
-      role: 'Research Assistant',
-      categories: ['Environmental Data Science', 'Machine Learning'],
-      keywords: ['Ghost Forest', 'GAMs', 'ROC Analysis', 'Carbon Flux', 'Tree Mortality'],
-      description: 'GEARS Program at North Carolina State University. Applied Generalized Additive Models (GAMs), Mann-Kendall trend tests, and regression analyses in R to identify hydrological and carbon-flux drivers of tree mortality. Used ROC analysis to establish early-warning thresholds and evaluate classification performance (AUC) for mortality risk prediction.',
-      links: {
-        paper: 'https://doi.org/10.3390/f16081255',
-        poster: '/posters/ncsu.png'
-      }
-    },
-    {
-      title: 'Effects of Thermal Anomalies Over the Tibetan Plateau on the Southern Hemisphere',
-      time: '04/2024 - 10/2024',
-      role: 'Lead Researcher',
-      categories: ['Climate Dynamics', 'Machine Learning'],
-      keywords: ['Tibetan Plateau', 'MATLAB', 'Random Forest', 'Climate Variables'],
-      description: 'Early Research Training Program "Golden Seed" Project. Conducted data visualization of 2-meter temperature, geopotential height, and wind fields using MATLAB. Applied linear regression and random forest models to analyze the relationships among key climate variables. Achieved first place and an "Excellent" rating in the final evaluation.',
-      links: {
-        poster: '/posters/金种子项目_海报（终稿）.pptx.pdf'
-      }
-    }
-  ]
-
-  const researchThemes = [
-    {
-      name: 'Atmospheric Chemistry',
-      description: 'Investigating chemical processes in the atmosphere, particle size distributions, and their impacts on climate and air quality.',
-      count: 2
-    },
-    {
-      name: 'Climate Extremes', 
-      description: 'Analyzing extreme weather and climate events, their causes, impacts, and future projections using CMIP6 models.',
-      count: 1
-    },
-    {
-      name: 'Environmental Data Science',
-      description: 'Developing computational methods and analytical frameworks for environmental data analysis using R, Python, and MATLAB.',
-      count: 3
-    },
-    {
-      name: 'Machine Learning',
-      description: 'Applying machine learning approaches including Random Forest and GAMs to atmospheric and climate research.',
-      count: 3
-    }
-  ]
-
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        {/* Back Button */}
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8 transition-colors"
-        >
-          <ArrowLeft size={18} />
-          Back to Home
-        </Link>
+    <SiteLayout
+      title="Research"
+      lead="Interdisciplinary work at the intersection of atmospheric science, climate dynamics, and computational methods."
+    >
+      <h2>Themes</h2>
+      <ul className="cv__list">
+        {themes.map((theme) => (
+          <li className="cv__row" key={theme.name}>
+            <div className="cv__period">{theme.name}</div>
+            <div className="cv__body">
+              <p style={{ margin: 0 }}>{theme.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        {/* Header */}
-        <div
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-bold text-navy-900 mb-4">Research Portfolio</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Interdisciplinary research at the intersection of atmospheric science, climate dynamics, 
-            and computational methods. Each project combines rigorous scientific inquiry with innovative 
-            analytical approaches.
-          </p>
-        </div>
-
-        {/* Research Themes */}
-        <section
-          className="mb-12"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Themes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {researchThemes.map((theme, index) => (
-              <div
-                key={theme.name}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-semibold text-lg text-gray-900">{theme.name}</h3>
-                  <span className="px-2 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
-                    {theme.count} project{theme.count > 1 ? 's' : ''}
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm">{theme.description}</p>
+      <h2>Projects</h2>
+      <ul className="archive__list">
+        {projects.map((project) => (
+          <li className="archive__item" key={project.title}>
+            <h3 className="archive__item-title">{project.title}</h3>
+            <p className="archive__item-meta">
+              {project.period} · {project.role}
+              {project.advisor ? ` · ${project.advisor}` : ''}
+              {project.affiliation ? ` · ${project.affiliation}` : ''}
+            </p>
+            <p className="archive__item-excerpt">{project.description}</p>
+            <ul className="tag-list">
+              {project.keywords.map((keyword) => (
+                <li className="tag" key={keyword}>
+                  {keyword}
+                </li>
+              ))}
+            </ul>
+            {project.links && (
+              <div className="archive__item-links" style={{ marginTop: '0.7em' }}>
+                {project.links.map((link) => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noreferrer noopener">
+                    {link.kind === 'paper' ? <FileText size={14} /> : <ImageIcon size={14} />}
+                    {link.label}
+                  </a>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            )}
+          </li>
+        ))}
+      </ul>
 
-        {/* Research Projects */}
-        <section
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-6">Research Projects</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {researchProjects.map((project, index) => (
-              <ResearchCard key={index} project={project} index={index} />
-            ))}
-          </div>
-        </section>
-
-        {/* Research Approach */}
-        <section
-          className="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-4">Research Approach</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">Methodological Framework</h3>
-              <p className="text-gray-700 text-sm">
-                My research combines traditional atmospheric science methods with modern computational approaches, 
-                emphasizing reproducibility, transparency, and physical interpretability in all analyses.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">Collaborative Approach</h3>
-              <p className="text-gray-700 text-sm">
-                I actively seek interdisciplinary collaborations that bring together diverse expertise to address 
-                complex environmental challenges from multiple perspectives.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+      <h2>Approach</h2>
+      <p>
+        I combine established atmospheric science methods with modern computational
+        approaches, and try to keep every analysis reproducible, transparent, and
+        physically interpretable. I actively look for interdisciplinary collaborations
+        that bring different kinds of expertise to bear on the same environmental
+        problem.
+      </p>
+    </SiteLayout>
   )
 }

@@ -1,407 +1,291 @@
-'use client'
-import Link from 'next/link'
-import { ArrowLeft, Download, Mail, MapPin, Calendar, GraduationCap, Award, BookOpen, Users } from 'lucide-react'
+import type { Metadata } from 'next'
+import SiteLayout from '@/components/SiteLayout'
+import { Download } from 'lucide-react'
 
-const CVDownloadLink = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-  <a
-    href="/CV.pdf"
-    download="Jiayin_Zhang_CV.pdf"
-    className={className}
-  >
-    {children}
-  </a>
-)
+export const metadata: Metadata = { title: 'CV' }
 
-const Section = ({ title, children, className = '' }: any) => (
-  <section
-    className={`mb-8 ${className}`}
-  >
-    <h2 className="text-2xl font-semibold text-navy-900 mb-4 border-b border-gray-200 pb-2">{title}</h2>
-    {children}
-  </section>
-)
+type Row = {
+  period: string
+  title: string
+  subtitle?: string
+  description?: string
+  items?: string[]
+}
 
-const TimelineItem = ({ period, title, subtitle, description, items }: any) => (
-  <div className="flex gap-6 mb-6">
-    <div className="flex flex-col items-center">
-      <div className="w-3 h-3 bg-blue-600 rounded-full mt-1"></div>
-      <div className="w-0.5 h-full bg-gray-200 mt-2"></div>
-    </div>
-    <div className="flex-1 pb-6">
-      <div className="flex items-center gap-2 mb-2">
-        <Calendar size={14} className="text-gray-500" />
-        <span className="text-sm font-medium text-gray-700">{period}</span>
-      </div>
-      <h3 className="font-semibold text-lg text-gray-900 mb-1">{title}</h3>
-      {subtitle && (
-        <p className="text-gray-600 mb-2">{subtitle}</p>
-      )}
-      {description && (
-        <p className="text-gray-700 text-sm leading-relaxed mb-3">{description}</p>
-      )}
-      {items && (
-        <ul className="space-y-1">
-          {items.map((item: string, index: number) => (
-            <li key={index} className="text-gray-600 text-sm flex items-start gap-2">
-              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>
-              {item}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  </div>
-)
+const education: Row[] = [
+  {
+    period: '09/2023 – Present',
+    title: 'B.S. in Atmospheric Science',
+    subtitle: 'Nanjing University, Nanjing, China',
+    description: 'CGPA 4.58 / 5.0 · Rank 3 / 78',
+    items: [
+      'Core modules: Introduction to Atmospheric Science, Fluid Dynamics, Introduction to Environmental Science, Calculus I & II, Probability Theory and Mathematical Statistics, Ordinary Differential Equations, College Physics I & II, General Chemistry, Linear Algebra, Scientific Computing I',
+      'Research assistant, Nanjing University Climate Lab',
+    ],
+  },
+  {
+    period: '09/2025 – Present',
+    title: 'Exchange Programme',
+    subtitle: 'The Hong Kong University of Science and Technology',
+    description: 'CGPA 3.925 / 4.3',
+    items: [
+      'Core modules: Atmospheric Chemistry, Practical Artificial Intelligence in Science, Air Quality Control and Management, Urban Air Pollution',
+    ],
+  },
+]
+
+const research: Row[] = [
+  {
+    period: '12/2025 – Present',
+    title: 'Shanghai urban organic aerosol dynamics and carbon partitioning',
+    subtitle:
+      'Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, HKUST',
+    items: [
+      'Analysed long-term observational datasets of urban organic aerosols in Shanghai to characterise regime-dependent temporal dynamics and carbon partitioning behaviour',
+      'Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behaviour across episodes',
+      'Evaluated inferred POC/SOC fractions through literature-based plausibility checks, with further plans for LSTM/PINN-based predictive modelling of regime evolution',
+    ],
+  },
+  {
+    period: '08/2025',
+    title: 'Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition',
+    subtitle:
+      'Advisor: Prof. Chao Yan, Nanjing–Helsinki Institute in Atmospheric and Earth System Science',
+    items: [
+      'Analysed particle size distribution data from 16 long-term global stations (ARM & EBAS databases) using a nano-ranking approach to identify environmental variations',
+      'Conducted preliminary growth rate (GR), formation rate (J), and GDE analyses',
+    ],
+  },
+  {
+    period: '11/2024 – 07/2025',
+    title:
+      'College Student Innovation and Entrepreneurship Program (provincial level)',
+    subtitle:
+      'Advisor: Prof. Anning Huang, School of Atmospheric Sciences, Nanjing University',
+    items: [
+      'Investigated spatiotemporal characteristics of extreme hourly precipitation events in the Yangtze River Basin',
+      'Conducted attribution analysis using CMIP6 model data to quantify the impact of anthropogenic emissions',
+    ],
+  },
+  {
+    period: '01/2025 – 02/2025',
+    title: 'GEARS Program',
+    subtitle:
+      'Advisor: Prof. Maricar Aguilos, Department of Forestry and Environmental Resources, North Carolina State University',
+    items: [
+      'Applied generalized additive models (GAMs), Mann–Kendall trend tests, and regression analyses in R to identify hydrological and carbon-flux drivers of tree mortality',
+      'Used ROC analysis to establish early-warning thresholds and evaluate classification performance (AUC) for mortality risk prediction',
+    ],
+  },
+  {
+    period: '04/2024 – 10/2024',
+    title: 'Early Research Training Program "Golden Seed"',
+    subtitle:
+      'Advisor: Prof. Yang Zhang, School of Atmospheric Sciences, Nanjing University',
+    items: [
+      'Visualised 2-metre temperature, geopotential height, and wind fields using MATLAB',
+      'Applied linear regression and random forest models to analyse relationships among key climate variables',
+      'Achieved first place and an "Excellent" rating in the final evaluation',
+    ],
+  },
+]
+
+const awards = [
+  { period: 'Nov 2025', title: 'Renmin Scholarship', subtitle: 'Nanjing University' },
+  {
+    period: 'Jun 2025',
+    title: 'Yan Baoling Overseas Exchange Scholarship, Excellence Award',
+    subtitle: 'Nanjing University',
+  },
+  {
+    period: 'Nov 2024, Oct 2025',
+    title: 'Nanjing University Outstanding Student',
+    subtitle: 'Nanjing University',
+  },
+  {
+    period: 'Oct 2024',
+    title: 'National Scholarship',
+    subtitle: 'Ministry of Education, China',
+  },
+  {
+    period: 'Sep 2024',
+    title: 'Outstanding Research Report',
+    subtitle: 'Nanjing University Summer Social Practice Program',
+  },
+  {
+    period: 'May 2024',
+    title: 'Freshman College Outstanding Student',
+    subtitle: 'Nanjing University',
+  },
+]
+
+const service = [
+  {
+    period: '02/2025 – Present',
+    title: 'Student Ambassador',
+    subtitle: 'Global Training Initiative, North Carolina State University',
+  },
+  {
+    period: '10/2024 – Present',
+    title: 'Standing Representative',
+    subtitle: 'Nanjing University Student Representative Congress',
+  },
+  {
+    period: '10/2024 – Present',
+    title: 'Guzheng Performer',
+    subtitle: 'Nanjing University Traditional Chinese Music Ensemble',
+  },
+  {
+    period: '09/2024 – Present',
+    title: 'Class Monitor',
+    subtitle: 'Nanjing–Helsinki Institute in Atmospheric and Earth System Science',
+  },
+]
+
+function RowList({ rows }: { rows: Row[] }) {
+  return (
+    <ul className="cv__list">
+      {rows.map((row) => (
+        <li className="cv__row" key={row.title + row.period}>
+          <div className="cv__period">{row.period}</div>
+          <div className="cv__body">
+            <p className="cv__title">{row.title}</p>
+            {row.subtitle && <p className="cv__subtitle">{row.subtitle}</p>}
+            {row.description && <p>{row.description}</p>}
+            {row.items && (
+              <ul>
+                {row.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export default function CV() {
-  const skills = {
-    technical: [
-      'Python',
-      'R',
-      'MATLAB',
-      'LaTeX',
-      'Office (PowerPoint, Word, Excel)'
-    ],
-    research: [
-      'Climate Data Analysis',
-      'Statistical Modeling',
-      'Machine Learning Applications',
-      'Atmospheric Modeling',
-      'Data Visualization',
-      'Scientific Writing'
-    ],
-    languages: [
-      'Mandarin (Native)',
-      'English (Proficient, IELTS 7.5)'
-    ]
-  }
-
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* Back Button */}
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8 transition-colors"
-        >
-          <ArrowLeft size={18} />
-          Back to Home
-        </Link>
+    <SiteLayout
+      title="Curriculum vitae"
+      lead="A condensed version is below; the full PDF includes complete publication and presentation lists."
+    >
+      <p>
+        <a className="btn" href="/CV.pdf" download="Jiayin_Zhang_CV.pdf">
+          <Download size={16} />
+          Download full CV (PDF)
+        </a>
+      </p>
 
-        {/* Header */}
-        <div
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-bold text-navy-900 mb-4">Curriculum Vitae</h1>
-          <p className="text-lg text-gray-600 mb-6">
-            Comprehensive academic and professional background
+      <h2>Education</h2>
+      <RowList rows={education} />
+
+      <h2>Research experience</h2>
+      <RowList rows={research} />
+
+      <h2>Publications &amp; presentations</h2>
+      <ul className="archive__list">
+        <li className="archive__item">
+          <h3 className="archive__item-title">
+            <a
+              href="https://doi.org/10.3390/f16081255"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Determining early warning thresholds to detect tree mortality risk in a
+              southeastern U.S. bottomland hardwood wetland
+            </a>
+          </h3>
+          <p className="archive__item-meta">
+            Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., McNulty, S., &amp; King, J.
+            (2025). <em>Forests</em>, 16(8), 1255.
           </p>
-          
-          {/* Download Button */}
-          <CVDownloadLink className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto cursor-pointer">
-            <Download size={18} />
-            Download Full CV (PDF)
-          </CVDownloadLink>
-        </div>
-
-        {/* Contact Information */}
-        <Section title="Contact Information">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex items-center gap-3">
-              <Mail size={18} className="text-gray-500" />
-              <div>
-                <div className="text-sm text-gray-600">Email</div>
-                <div className="text-gray-900">jiayin.zhang@helsinki.fi</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <MapPin size={18} className="text-gray-500" />
-              <div>
-                <div className="text-sm text-gray-600">Location</div>
-                <div className="text-gray-900">1520 Taihu Avenue, Huqiu District, Suzhou, China</div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* Education */}
-        <Section title="Education">
-          <TimelineItem
-            period="09/2023 - Present"
-            title="Bachelor of Science in Atmospheric Science"
-            subtitle="Nanjing University, Nanjing, China"
-            description="CGPA: 4.56/5.0 | Ranking: 3/78"
-            items={[
-              'Core modules: Introduction to Atmospheric Science, Fluid Dynamics, Introduction to Environmental Science, Calculus I & II, Probability Theory and Mathematical Statistics, Ordinary Differential Equations, College Physics I & II, General Chemistry, Linear Algebra, Scientific Computing I',
-              'Research Assistant: Nanjing University Climate Lab'
-            ]}
-          />
-          
-          <TimelineItem
-            period="09/2025 - Present"
-            title="Exchange Program"
-            subtitle="Hong Kong University of Science and Technology"
-            description="CGPA: 3.925/4.3"
-            items={[
-              'Core modules: Atmospheric Chemistry, Practical Artificial Intelligence in Science, Air Quality Control and Management, Urban Air Pollution'
-            ]}
-          />
-        </Section>
-
-        {/* Research Experience */}
-        <Section title="Research Experience">
-          <TimelineItem
-            period="12/2025 - Present"
-            title="Shanghai Urban Organic Aerosol Dynamics and Carbon Partitioning Analysis"
-            subtitle="Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, The Hong Kong University of Science and Technology"
-            description="Dynamic Regime Transitions and POC/SOC Partitioning of Urban Organic Aerosols in Shanghai"
-            items={[
-              'Analyzed long-term observational datasets of urban organic aerosols in Shanghai to characterize regime-dependent temporal dynamics and carbon partitioning behavior',
-              'Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behavior across episodes',
-              'Evaluated inferred POC/SOC fractions through literature-based plausibility checks and external consistency analysis, with further plans for LSTM/PINN-based predictive modeling of regime evolution'
-            ]}
-          />
-          
-          <TimelineItem
-            period="08/2025"
-            title="Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition"
-            subtitle="Advisor: Prof. Chao Yan, Nanjing-Helsinki Institute in Atmospheric and Earth System Science, Nanjing University"
-            description="Investigation on Global Multi-site Particle Number Size Distribution"
-            items={[
-              'Analyzed particle size distribution data from 16 long-term global stations (from ARM & EBAS database) using a nano-ranking approach to identify environmental variations',
-              'Conducted preliminary growth rate (GR), formation rate (J), and GDE analyses'
-            ]}
-          />
-          
-          <TimelineItem
-            period="11/2024 - 07/2025"
-            title="College Student Innovation and Entrepreneurship Program (Provincial-level)"
-            subtitle="Advisor: Prof. Anning Huang, School of Atmospheric Science, Nanjing University"
-            description="Characterization of Summer Hourly Extreme Precipitation and Attribution of Anthropogenic Discharge in the Middle and Lower Yangtze River Basin"
-            items={[
-              'Investigated spatiotemporal characteristics of extreme hourly precipitation events in the Yangtze River',
-              'Conducted attribution analysis using CMIP6 model data to quantifying the impact of anthropogenic emissions'
-            ]}
-          />
-          
-          <TimelineItem
-            period="01/2025 - 02/2025"
-            title="GEARS Program"
-            subtitle="Advisor: Prof. Maricar Aguilos, Department of Forestry and Environmental Resources, North Carolina State University"
-            description="Irreversible Impacts of Sea Level Rise and Prolonged Inundation on Carbon Fluxes and Tree Mortality: Drivers of Ghost Forest Formation"
-            items={[
-              'Applied Generalized Additive Models (GAMs), Mann-Kendall trend tests, and regression analyses in R to identify hydrological and carbon-flux drivers of tree mortality',
-              'Used ROC analysis to establish early-warning thresholds and evaluate classification performance (AUC) for mortality risk prediction'
-            ]}
-          />
-          
-          <TimelineItem
-            period="04/2024 - 10/2024"
-            title="Early Research Training Program 'Golden Seed' Project"
-            subtitle="Advisor: Prof. Yang Zhang, School of Atmospheric Science, Nanjing University"
-            description="Effects of Thermal Anomalies Over the Tibetan Plateau on the Southern Hemisphere"
-            items={[
-              'Conducted data visualization of 2-meter temperature, geopotential height, and wind fields using MATLAB',
-              'Applied linear regression and random forest models to analyze the relationships among key climate variables',
-              'Achieved first place and an "Excellent" rating in the final evaluation'
-            ]}
-          />
-        </Section>
-
-        {/* Competitions */}
-        <Section title="Competitions">
-          <TimelineItem
-            period="2025"
-            title="2025 Asian Climate-SDG Technology Innovation Hackathon"
-            subtitle="Finalist"
-            description=""
-            items={[
-              'Invited to showcase the project at a roadshow in Hong Kong and went to Brazil to participate in the UN Climate Change conference (COP30)',
-              'Developed a novel urban digital twin platform designed to safeguard public health against climate-related risks like flooding and epidemics by integrating hydrodynamic, epidemiological, and community intelligence data'
-            ]}
-          />
-        </Section>
-
-        {/* Skills */}
-        <Section title="Skills & Expertise">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900 flex items-center gap-2">
-                <BookOpen size={18} />
-                Technical Skills
-              </h3>
-              <ul className="space-y-2">
-                {skills.technical.map((skill, index) => (
-                  <li key={index} className="text-gray-700 text-sm">• {skill}</li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900 flex items-center gap-2">
-                <Award size={18} />
-                Research Methods
-              </h3>
-              <ul className="space-y-2">
-                {skills.research.map((skill, index) => (
-                  <li key={index} className="text-gray-700 text-sm">• {skill}</li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900 flex items-center gap-2">
-                <Users size={18} />
-                Languages
-              </h3>
-              <ul className="space-y-2">
-                {skills.languages.map((language, index) => (
-                  <li key={index} className="text-gray-700 text-sm">• {language}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900 flex items-center gap-2">
-                <Award size={18} />
-                Hobbies
-              </h3>
-              <ul className="space-y-2">
-                <li className="text-gray-700 text-sm">• Volunteering (200+ hours)</li>
-                <li className="text-gray-700 text-sm">• Badminton</li>
-                <li className="text-gray-700 text-sm">• Gym</li>
-              </ul>
-            </div>
-          </div>
-        </Section>
-
-        {/* Publications & Presentations */}
-        <Section title="Publications & Presentations">
-          <div className="space-y-4">
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <h3 className="font-semibold text-gray-900">Determining Early Warning Thresholds to Detect Tree Mortality Risk in a Southeastern U.S. Bottomland Hardwood Wetland</h3>
-              <p className="text-sm text-gray-600">Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., McNulty, S., & King, J. (2025). Forests, 16(8), 1255. https://doi.org/10.3390/f16081255</p>
-            </div>
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <h3 className="font-semibold text-gray-900">Characterization of Summer Hourly Extreme Precipitation and Attribution of Anthropogenic Discharge in the Middle and Lower Yangtze River Basin</h3>
-              <p className="text-sm text-gray-600">First Nanjing University Atmospheric Sciences Top Forum, Oral, Nanjing, China (May 2025)</p>
-            </div>
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <h3 className="font-semibold text-gray-900">Linking Hydrological Stress to Ghost Forest Formation: Thresholds for Tree Mortality in Coastal Ecosystems</h3>
-              <p className="text-sm text-gray-600">Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., & King, J. AmeriFlux Annual Meeting, Tucson, USA (October 2025)</p>
-            </div>
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <h3 className="font-semibold text-gray-900">Modeling Evapotranspiration Dynamics Across Southeastern U.S. Ecosystems Using Flux Data and Machine Learning</h3>
-              <p className="text-sm text-gray-600">Aguilos, M., Sun, G., Liu, N., Zhang, J., Belgado, M., McNulty, S., & King, J. AGU Annual Meeting, New Orleans, USA (December 2025)</p>
-            </div>
-          </div>
-        </Section>
-
-        {/* Awards & Honors */}
-        <Section title="Awards & Honors">
-          <div className="space-y-3">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Renmin Scholarship</h3>
-                <p className="text-sm text-gray-600">Nanjing University</p>
-              </div>
-              <span className="text-sm text-gray-500">November 2025</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Yan Baoling Overseas Exchange Scholarship Excellence Award</h3>
-                <p className="text-sm text-gray-600">Nanjing University</p>
-              </div>
-              <span className="text-sm text-gray-500">June 2025</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Nanjing University Outstanding Student</h3>
-                <p className="text-sm text-gray-600">Nanjing University</p>
-              </div>
-              <span className="text-sm text-gray-500">November 2024, October 2025</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">National Scholarship</h3>
-                <p className="text-sm text-gray-600">Ministry of Education, China</p>
-              </div>
-              <span className="text-sm text-gray-500">October 2024</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Outstanding Research Report</h3>
-                <p className="text-sm text-gray-600">Nanjing University Summer Social Practice Program</p>
-              </div>
-              <span className="text-sm text-gray-500">September 2024</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Nanjing University Freshman College Outstanding Student</h3>
-                <p className="text-sm text-gray-600">Nanjing University</p>
-              </div>
-              <span className="text-sm text-gray-500">May 2024</span>
-            </div>
-          </div>
-        </Section>
-
-        {/* Extracurricular Activities */}
-        <Section title="Extracurricular Activities">
-          <div className="space-y-3">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Student Ambassador</h3>
-                <p className="text-sm text-gray-600">Global Training Initiative of North Carolina State University</p>
-              </div>
-              <span className="text-sm text-gray-500">02/2025 - Present</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Standing Representative</h3>
-                <p className="text-sm text-gray-600">Nanjing University Student Representative Congress</p>
-              </div>
-              <span className="text-sm text-gray-500">10/2024 - Present</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Guzheng Performer</h3>
-                <p className="text-sm text-gray-600">Nanjing University Traditional Chinese Music Ensemble</p>
-              </div>
-              <span className="text-sm text-gray-500">10/2024 - Present</span>
-            </div>
-            
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-gray-900">Monitor</h3>
-                <p className="text-sm text-gray-600">Nanjing-Helsinki Institute in Atmospheric and Earth System</p>
-              </div>
-              <span className="text-sm text-gray-500">09/2024 - Present</span>
-            </div>
-          </div>
-        </Section>
-
-        {/* Download Section */}
-        <div
-          className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8 text-center mt-12"
-        >
-          <h2 className="text-2xl font-semibold text-navy-900 mb-4">Complete Academic Profile</h2>
-          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-            Download the full PDF version of my curriculum vitae for detailed information including 
-            complete publication list, conference presentations, teaching experience, and references.
+        </li>
+        <li className="archive__item">
+          <h3 className="archive__item-title">
+            Characterization of summer hourly extreme precipitation and attribution of
+            anthropogenic discharge in the middle and lower Yangtze River Basin
+          </h3>
+          <p className="archive__item-meta">
+            Oral presentation · First Nanjing University Atmospheric Sciences Top Forum,
+            Nanjing, China · May 2025
           </p>
-          <CVDownloadLink className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto cursor-pointer">
-            <Download size={18} />
-            Download Full CV (PDF)
-          </CVDownloadLink>
-        </div>
-      </div>
-    </div>
+        </li>
+        <li className="archive__item">
+          <h3 className="archive__item-title">
+            Linking hydrological stress to ghost forest formation: thresholds for tree
+            mortality in coastal ecosystems
+          </h3>
+          <p className="archive__item-meta">
+            Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., &amp; King, J. · AmeriFlux
+            Annual Meeting, Tucson, USA · October 2025
+          </p>
+        </li>
+        <li className="archive__item">
+          <h3 className="archive__item-title">
+            Modeling evapotranspiration dynamics across southeastern U.S. ecosystems
+            using flux data and machine learning
+          </h3>
+          <p className="archive__item-meta">
+            Aguilos, M., Sun, G., Liu, N., Zhang, J., Belgado, M., McNulty, S., &amp;
+            King, J. · AGU Annual Meeting, New Orleans, USA · December 2025
+          </p>
+        </li>
+      </ul>
+
+      <h2>Competitions</h2>
+      <RowList
+        rows={[
+          {
+            period: '2025',
+            title: '2025 Asian Climate-SDG Technology Innovation Hackathon',
+            subtitle: 'Finalist',
+            items: [
+              'Invited to a roadshow in Hong Kong and to the UN Climate Change Conference (COP30) in Brazil',
+              'Developed an urban digital twin platform to safeguard public health against climate-related risks such as flooding and epidemics, integrating hydrodynamic, epidemiological, and community intelligence data',
+            ],
+          },
+        ]}
+      />
+
+      <h2>Awards &amp; honours</h2>
+      <RowList rows={awards} />
+
+      <h2>Service &amp; leadership</h2>
+      <RowList rows={service} />
+
+      <h2>Skills</h2>
+      <ul className="cv__list">
+        <li className="cv__row">
+          <div className="cv__period">Programming</div>
+          <div className="cv__body">
+            <p style={{ margin: 0 }}>Python · R · MATLAB · LaTeX · Microsoft Office</p>
+          </div>
+        </li>
+        <li className="cv__row">
+          <div className="cv__period">Methods</div>
+          <div className="cv__body">
+            <p style={{ margin: 0 }}>
+              Climate data analysis · statistical modelling · machine learning ·
+              atmospheric modelling · data visualisation · scientific writing
+            </p>
+          </div>
+        </li>
+        <li className="cv__row">
+          <div className="cv__period">Languages</div>
+          <div className="cv__body">
+            <p style={{ margin: 0 }}>Mandarin (native) · English (IELTS 7.5)</p>
+          </div>
+        </li>
+        <li className="cv__row">
+          <div className="cv__period">Interests</div>
+          <div className="cv__body">
+            <p style={{ margin: 0 }}>Volunteering (200+ hours) · guzheng · badminton · gym</p>
+          </div>
+        </li>
+      </ul>
+    </SiteLayout>
   )
 }
