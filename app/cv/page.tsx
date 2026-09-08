@@ -16,129 +16,126 @@ const education: Row[] = [
   {
     period: '09/2023 – Present',
     title: 'B.S. in Atmospheric Science',
-    subtitle: 'Nanjing University, Nanjing, China',
-    description: 'CGPA 4.58 / 5.0 · Rank 3 / 78',
-    items: [
-      'Core modules: Introduction to Atmospheric Science, Fluid Dynamics, Introduction to Environmental Science, Calculus I & II, Probability Theory and Mathematical Statistics, Ordinary Differential Equations, College Physics I & II, General Chemistry, Linear Algebra, Scientific Computing I',
-      'Research assistant, Nanjing University Climate Lab',
-    ],
+    subtitle: 'Nanjing University and University of Helsinki',
+    description:
+      'Sino-Finnish dual-degree program, Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences',
   },
   {
-    period: '09/2025 – Present',
-    title: 'Exchange Programme',
+    period: '09/2025 – 12/2025',
+    title: 'Undergraduate Exchange Program',
     subtitle: 'The Hong Kong University of Science and Technology',
-    description: 'CGPA 3.925 / 4.3',
-    items: [
-      'Core modules: Atmospheric Chemistry, Practical Artificial Intelligence in Science, Air Quality Control and Management, Urban Air Pollution',
-    ],
+    description: 'Atmospheric Science / Environmental Science',
   },
 ]
 
 const research: Row[] = [
   {
-    period: '12/2025 – Present',
-    title: 'Shanghai urban organic aerosol dynamics and carbon partitioning',
-    subtitle:
-      'Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, HKUST',
+    period: '07/2026 – Present',
+    title: 'Observation-constrained reconstruction of high-resolution urban isoprene emissions',
+    subtitle: 'Advisor: Prof. Yuan Wang, Stanford University',
     items: [
-      'Analysed long-term observational datasets of urban organic aerosols in Shanghai to characterise regime-dependent temporal dynamics and carbon partitioning behaviour',
-      'Applied PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behaviour across episodes',
-      'Evaluated inferred POC/SOC fractions through literature-based plausibility checks, with further plans for LSTM/PINN-based predictive modelling of regime evolution',
+      'Built a unified high-resolution spatiotemporal framework for New York City by integrating TEMPO HCHO/NO2, meteorology, vegetation, land cover, anthropogenic emissions, and urban BVOC emission estimates',
+      'Developed a hybrid machine-learning model to reconstruct hourly isoprene emissions using observation-constrained information and high-resolution emission priors',
+      'Designed temporal and spatial block validation, residual-learning diagnostics, and uncertainty analyses to evaluate reconstruction skill and generalizability',
     ],
   },
   {
-    period: '08/2025',
-    title: 'Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition',
-    subtitle:
-      'Advisor: Prof. Chao Yan, Nanjing–Helsinki Institute in Atmospheric and Earth System Science',
+    period: '12/2025 – Present',
+    title: 'Regime transitions and POC/SOC partitioning of urban organic aerosols in Shanghai',
+    subtitle: 'Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, HKUST',
     items: [
-      'Analysed particle size distribution data from 16 long-term global stations (ARM & EBAS databases) using a nano-ranking approach to identify environmental variations',
-      'Conducted preliminary growth rate (GR), formation rate (J), and GDE analyses',
+      'Characterized regime-dependent temporal dynamics and carbon partitioning of Shanghai urban organic aerosols from long-term observations',
+      'Implemented PCA–GMM clustering and transition-matrix diagnostics to quantify regime residence times, stationary distributions, and switching across pollution episodes',
+      'Evaluated inferred POC/SOC fractions against literature constraints and examined data-driven prediction of regime evolution',
+    ],
+  },
+  {
+    period: '08/2025 – Present',
+    title: 'Boreal-forest new particle formation and multi-site particle number size distributions',
+    subtitle:
+      'Advisors: Prof. Chao Yan and Prof. Lian Xue, Nanjing University and University of Helsinki',
+    items: [
+      'Analyzed particle number size distributions from 16 long-term ARM and EBAS stations during the Sino-Finnish Helsinki Atmospheric and Earth System Scientific Expedition, using nano-ranking with preliminary growth-rate (GR), formation-rate (J), and GDE analyses',
+      'Combined SMEAR II N50 observations with ENSO, NAO, and AO indices to quantify teleconnections to boreal-forest new particle formation (College Student Innovation Training Program)',
+      'Characterized seasonal and interannual N50 controls with lagged cross-correlation, spectral analysis, joint NAO–AO composites, and radiation-stratified wavelet coherence',
     ],
   },
   {
     period: '11/2024 – 07/2025',
     title:
-      'College Student Innovation and Entrepreneurship Program (provincial level)',
+      'Characterization of summer hourly extreme precipitation and attribution of anthropogenic emissions in the middle and lower Yangtze River Basin',
     subtitle:
       'Advisor: Prof. Anning Huang, School of Atmospheric Sciences, Nanjing University',
     items: [
-      'Investigated spatiotemporal characteristics of extreme hourly precipitation events in the Yangtze River Basin',
-      'Conducted attribution analysis using CMIP6 model data to quantify the impact of anthropogenic emissions',
+      'Investigated the spatial and temporal characteristics of summer hourly extreme precipitation across the middle and lower Yangtze River Basin using long-term station observations',
+      'Conducted attribution analyses using CMIP6 model experiments to evaluate the influence of anthropogenic emissions and natural forcing',
     ],
   },
   {
-    period: '01/2025 – 02/2025',
-    title: 'GEARS Program',
+    period: '01/2025 – 12/2025',
+    title: 'Hydrological stress, carbon fluxes, and tree-mortality risk in coastal and bottomland forests',
     subtitle:
-      'Advisor: Prof. Maricar Aguilos, Department of Forestry and Environmental Resources, North Carolina State University',
+      'Advisor: Prof. Maricar Aguilos, North Carolina State University',
     items: [
-      'Applied generalized additive models (GAMs), Mann–Kendall trend tests, and regression analyses in R to identify hydrological and carbon-flux drivers of tree mortality',
-      'Used ROC analysis to establish early-warning thresholds and evaluate classification performance (AUC) for mortality risk prediction',
-    ],
-  },
-  {
-    period: '04/2024 – 10/2024',
-    title: 'Early Research Training Program "Golden Seed"',
-    subtitle:
-      'Advisor: Prof. Yang Zhang, School of Atmospheric Sciences, Nanjing University',
-    items: [
-      'Visualised 2-metre temperature, geopotential height, and wind fields using MATLAB',
-      'Applied linear regression and random forest models to analyse relationships among key climate variables',
-      'Achieved first place and an "Excellent" rating in the final evaluation',
+      'Quantified hydrological and carbon-flux drivers of tree mortality using generalized additive models, Mann–Kendall tests, and regression analyses in R',
+      'Established ROC-based early-warning thresholds and evaluated classification performance for tree-mortality risk prediction',
     ],
   },
 ]
 
-const awards = [
-  { period: 'Nov 2025', title: 'Renmin Scholarship', subtitle: 'Nanjing University' },
+const awards: Row[] = [
   {
-    period: 'Jun 2025',
-    title: 'Yan Baoling Overseas Exchange Scholarship, Excellence Award',
+    period: '2025–2026',
+    title: 'Zheng-Gang Scholarship for Overseas Study',
+    subtitle: 'Nanjing University (Top 2%)',
+  },
+  {
+    period: '2025–2026',
+    title: 'Renmin Scholarship',
     subtitle: 'Nanjing University',
   },
   {
-    period: 'Nov 2024, Oct 2025',
-    title: 'Nanjing University Outstanding Student',
+    period: '2024–2025',
+    title: 'Yan Baoling Scholarship for Overseas Exchange (Excellence Award)',
     subtitle: 'Nanjing University',
   },
   {
-    period: 'Oct 2024',
+    period: '2023–2025',
+    title: 'Outstanding Student',
+    subtitle: 'Nanjing University (2023–2024 and 2024–2025)',
+  },
+  {
+    period: '2023–2024',
     title: 'National Scholarship',
-    subtitle: 'Ministry of Education, China',
+    subtitle: 'Ministry of Education of China (Top 1%)',
   },
   {
-    period: 'Sep 2024',
+    period: '2024',
     title: 'Outstanding Research Report',
     subtitle: 'Nanjing University Summer Social Practice Program',
   },
   {
-    period: 'May 2024',
+    period: '2023–2024',
     title: 'Freshman College Outstanding Student',
     subtitle: 'Nanjing University',
   },
 ]
 
-const service = [
+const service: Row[] = [
   {
     period: '02/2025 – Present',
     title: 'Student Ambassador',
     subtitle: 'Global Training Initiative, North Carolina State University',
   },
   {
-    period: '10/2024 – Present',
+    period: '2024 – 2026',
     title: 'Standing Representative',
     subtitle: 'Nanjing University Student Representative Congress',
   },
   {
-    period: '10/2024 – Present',
-    title: 'Guzheng Performer',
-    subtitle: 'Nanjing University Traditional Chinese Music Ensemble',
-  },
-  {
-    period: '09/2024 – Present',
+    period: '09/2024 – 09/2025',
     title: 'Class Monitor',
-    subtitle: 'Nanjing–Helsinki Institute in Atmospheric and Earth System Science',
+    subtitle: 'Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences',
   },
 ]
 
@@ -170,7 +167,7 @@ export default function CV() {
   return (
     <SiteLayout
       title="Curriculum vitae"
-      lead="A condensed version is below; the full PDF includes complete publication and presentation lists."
+      lead="A condensed version is below; the PDF download matches the latest CV."
     >
       <p>
         <a className="btn" href="/CV.pdf" download="Jiayin_Zhang_CV.pdf">
@@ -215,6 +212,15 @@ export default function CV() {
         </li>
         <li className="archive__item">
           <h3 className="archive__item-title">
+            Characterization of summer hourly extreme precipitation and attribution of
+            anthropogenic discharge in the middle and lower Yangtze River Basin
+          </h3>
+          <p className="archive__item-meta">
+            Oral presentation · Second AtmosFuture Forum, Suzhou, China · April 2026
+          </p>
+        </li>
+        <li className="archive__item">
+          <h3 className="archive__item-title">
             Linking hydrological stress to ghost forest formation: thresholds for tree
             mortality in coastal ecosystems
           </h3>
@@ -235,16 +241,24 @@ export default function CV() {
         </li>
       </ul>
 
-      <h2>Competitions</h2>
+      <h2>Selected competitions</h2>
       <RowList
         rows={[
           {
-            period: '2025',
-            title: '2025 Asian Climate-SDG Technology Innovation Hackathon',
-            subtitle: 'Finalist',
+            period: 'Aug 2026',
+            title:
+              'First Prize, China International College Students’ Innovation Competition (CICSIC), Finland Regional',
+            subtitle: 'Project Sentinella (US$3,000 award)',
             items: [
-              'Invited to a roadshow in Hong Kong and to the UN Climate Change Conference (COP30) in Brazil',
-              'Developed an urban digital twin platform to safeguard public health against climate-related risks such as flooding and epidemics, integrating hydrodynamic, epidemiological, and community intelligence data',
+              'Developed Sentinella, an integrated digital-twin system for hyperlocal-scale climate and public-health risk',
+            ],
+          },
+          {
+            period: 'Nov 2025',
+            title: 'Invited Presenter, United Nations Climate Change Conference (COP30)',
+            subtitle: 'Belém, Brazil; Asian Climate–SDG Technology Innovation Hackathon Finalist',
+            items: [
+              'Invited to present Sentinella on the UNFCCC COP30 stage after selection as a hackathon finalist',
             ],
           },
         ]}
@@ -253,36 +267,42 @@ export default function CV() {
       <h2>Awards &amp; honours</h2>
       <RowList rows={awards} />
 
-      <h2>Service &amp; leadership</h2>
-      <RowList rows={service} />
+      <h2>International engagement &amp; leadership</h2>
+      <RowList
+        rows={[
+          {
+            period: 'Jul 2026',
+            title: 'Selected Delegate, UNITAR & Nanjing University UN Immersion Programme',
+            subtitle: 'Palais des Nations, Geneva',
+            items: [
+              'Completed a multilateral diplomacy and global governance immersion, including UN system briefings and engagement with Geneva-based international organizations',
+            ],
+          },
+          ...service,
+        ]}
+      />
 
       <h2>Skills</h2>
       <ul className="cv__list">
         <li className="cv__row">
           <div className="cv__period">Programming</div>
           <div className="cv__body">
-            <p style={{ margin: 0 }}>Python · R · MATLAB · LaTeX · Microsoft Office</p>
+            <p style={{ margin: 0 }}>Python · R · MATLAB · LaTeX</p>
           </div>
         </li>
         <li className="cv__row">
           <div className="cv__period">Methods</div>
           <div className="cv__body">
             <p style={{ margin: 0 }}>
-              Climate data analysis · statistical modelling · machine learning ·
-              atmospheric modelling · data visualisation · scientific writing
+              Statistical modeling · machine learning · satellite and in situ data
+              analysis · scientific visualization
             </p>
           </div>
         </li>
         <li className="cv__row">
           <div className="cv__period">Languages</div>
           <div className="cv__body">
-            <p style={{ margin: 0 }}>Mandarin (native) · English (IELTS 7.5)</p>
-          </div>
-        </li>
-        <li className="cv__row">
-          <div className="cv__period">Interests</div>
-          <div className="cv__body">
-            <p style={{ margin: 0 }}>Volunteering (200+ hours) · guzheng · badminton · gym</p>
+            <p style={{ margin: 0 }}>Mandarin Chinese (native) · English (IELTS 7.5)</p>
           </div>
         </li>
       </ul>

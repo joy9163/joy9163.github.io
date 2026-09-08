@@ -4,24 +4,28 @@ import Link from 'next/link'
 
 const news = [
   {
-    date: 'Dec 2025',
-    text: 'Started work on urban organic aerosol regime transitions and POC/SOC partitioning in Shanghai at HKUST.',
+    date: 'Aug 2026',
+    text: 'First Prize at the Finland regional of the China International College Students’ Innovation Competition (CICSIC) for project Sentinella (US$3,000 award).',
+  },
+  {
+    date: 'Jul 2026',
+    text: 'Started a visiting research internship at Stanford University with Prof. Yuan Wang on observation-constrained reconstruction of urban isoprene emissions.',
+  },
+  {
+    date: 'Jul 2026',
+    text: 'Selected delegate, UNITAR & Nanjing University UN Immersion Programme, Palais des Nations, Geneva.',
   },
   {
     date: 'Nov 2025',
-    text: 'Selected as a finalist in the 2025 Asian Climate-SDG Technology Innovation Hackathon; presented at COP30 in Brazil.',
+    text: 'Invited to present Sentinella at COP30 in Belém after selection as a finalist of the 2025 Asian Climate–SDG Technology Innovation Hackathon.',
   },
   {
-    date: 'Oct 2025',
-    text: 'Co-authored poster at the AmeriFlux Annual Meeting, Tucson, USA.',
-  },
-  {
-    date: 'Sep 2025',
-    text: 'Began an exchange year at the Hong Kong University of Science and Technology.',
+    date: 'Dec 2025',
+    text: 'Began research on urban organic-aerosol regime transitions and POC/SOC partitioning in Shanghai at HKUST.',
   },
   {
     date: 'Aug 2025',
-    text: 'Published in Forests on early-warning thresholds for tree mortality in bottomland hardwood wetlands.',
+    text: 'Co-authored a paper in Forests on early-warning thresholds for tree-mortality risk in southeastern U.S. bottomland hardwood wetlands.',
   },
 ]
 
@@ -29,14 +33,14 @@ const education = [
   {
     period: '09/2023 – Present',
     title: 'B.S. in Atmospheric Science',
-    subtitle: 'Nanjing University, Nanjing, China',
-    note: 'CGPA 4.58 / 5.0 · Rank 3 / 78',
+    subtitle: 'Nanjing University and University of Helsinki',
+    note: 'Sino-Finnish dual-degree program, Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences',
   },
   {
-    period: '09/2025 – Present',
-    title: 'Exchange Programme',
+    period: '09/2025 – 12/2025',
+    title: 'Undergraduate Exchange Program',
     subtitle: 'The Hong Kong University of Science and Technology',
-    note: 'CGPA 3.925 / 4.3 · Atmospheric Chemistry, Practical AI in Science, Air Quality Control, Urban Air Pollution',
+    note: 'Atmospheric Science / Environmental Science',
   },
 ]
 
@@ -44,42 +48,45 @@ export default function AboutContent() {
   return (
     <>
       <p>
-        I am an undergraduate student in Atmospheric Science at{' '}
-        <strong>Nanjing University</strong>, currently on exchange at the{' '}
-        <strong>Hong Kong University of Science and Technology</strong>. My work sits
-        at the intersection of atmospheric chemistry, climate extremes, and
-        data-driven environmental research.
+        I am an undergraduate researcher in atmospheric science in the Sino-Finnish
+        dual-degree program at <strong>Nanjing University</strong> and the{' '}
+        <strong>University of Helsinki</strong> (Nanjing–Helsinki Institute in
+        Atmospheric and Earth System Sciences). I am currently a visiting research
+        intern at <strong>Stanford University</strong>, working with Prof. Yuan Wang
+        on observation-constrained reconstruction of high-resolution urban isoprene
+        emissions.
       </p>
       <p>
-        I am particularly interested in combining physical understanding with
-        interpretable machine learning to study complex Earth system problems — from
-        extreme precipitation attribution with CMIP6 models, to global particle number
-        size distributions across 16 long-term stations, to organic aerosol regime
-        transitions in urban Shanghai. Research experience across China, Finland, Hong
-        Kong, and the United States has shaped how I approach these questions.
+        My research focuses on atmospheric chemistry, urban air quality, biogenic
+        volatile organic compounds (BVOCs), and observation-driven machine learning.
+        Recent work includes urban organic-aerosol regime analysis in Shanghai,
+        boreal-forest new particle formation from multi-site particle number size
+        distributions, and hydrological controls on tree-mortality risk in
+        southeastern U.S. forests.
       </p>
       <p>
-        I plan to pursue graduate study at the intersection of atmospheric science and
-        computational methods, with the goal of developing approaches that are both
-        physically grounded and practically useful for understanding climate change
-        impacts.
+        I plan to pursue graduate study at the intersection of atmospheric science
+        and computational methods, with the goal of developing approaches that are
+        both physically grounded and practically useful for air quality and climate
+        problems.
       </p>
 
       <h2>Research interests</h2>
       <ul>
         <li>
-          <strong>Atmospheric chemistry</strong> — new particle formation, particle
-          number size distributions, organic aerosol dynamics, urban air quality
+          <strong>Atmospheric chemistry</strong> — urban air quality, BVOCs, new
+          particle formation, particle number size distributions, organic aerosol
+          dynamics
         </li>
         <li>
           <strong>Climate extremes</strong> — hourly extreme precipitation,
-          anthropogenic attribution, regional climate over the Yangtze River Basin and
-          the Tibetan Plateau
+          anthropogenic attribution, and regional climate over the Yangtze River
+          Basin
         </li>
         <li>
-          <strong>Environmental data science</strong> — interpretable machine
+          <strong>Environmental data science</strong> — observation-driven machine
           learning, clustering and regime detection, generalized additive models,
-          threshold and early-warning analysis
+          satellite and in situ data analysis
         </li>
       </ul>
 

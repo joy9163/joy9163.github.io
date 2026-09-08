@@ -23,9 +23,11 @@ export default function Contact() {
           <div className="cv__period">Affiliation</div>
           <div className="cv__body">
             <p style={{ margin: 0 }}>
-              School of Atmospheric Sciences, Nanjing University, Nanjing, China
+              Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences
               <br />
-              Currently on exchange at HKUST, Hong Kong SAR
+              Nanjing University &amp; University of Helsinki
+              <br />
+              Currently a visiting research intern at Stanford University
             </p>
           </div>
         </li>

@@ -7,9 +7,9 @@ export const metadata: Metadata = {
     template: '%s | Jiayin Zhang',
   },
   description:
-    'Jiayin Zhang — undergraduate researcher in Atmospheric Science at Nanjing University. Atmospheric chemistry, climate extremes, and environmental data science.',
+    'Jiayin Zhang — undergraduate visiting research intern at Stanford University, in the Sino-Finnish dual-degree program at Nanjing University and the University of Helsinki. Atmospheric chemistry, urban air quality, BVOCs, and observation-driven machine learning.',
   keywords:
-    'Jiayin Zhang, atmospheric science, atmospheric chemistry, climate extremes, environmental data science, machine learning, Nanjing University, HKUST',
+    'Jiayin Zhang, atmospheric science, atmospheric chemistry, urban air quality, BVOCs, machine learning, Stanford University, Nanjing University, University of Helsinki',
   authors: [{ name: 'Jiayin Zhang' }],
   creator: 'Jiayin Zhang',
   robots: 'index, follow',

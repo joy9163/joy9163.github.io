@@ -14,11 +14,19 @@ const journalArticles = [
     venue: 'Forests, 16(8), 1255',
     doi: 'https://doi.org/10.3390/f16081255',
     summary:
-      'Establishes early-warning thresholds for tree mortality risk in southeastern U.S. bottomland hardwood wetlands using hydrological stress indicators and carbon flux measurements.',
+      'Establishes early-warning thresholds for tree-mortality risk in southeastern U.S. bottomland hardwood wetlands using hydrological stress indicators and carbon-flux measurements.',
   },
 ]
 
 const presentations = [
+  {
+    authors: 'Zhang, J.',
+    date: 'April 2026',
+    title:
+      'Characterization of summer hourly extreme precipitation and attribution of anthropogenic discharge in the middle and lower Yangtze River Basin',
+    venue: 'Second AtmosFuture Forum, Suzhou, China',
+    type: 'Oral presentation',
+  },
   {
     authors: 'Zhang, J.',
     date: 'May 2025',
@@ -37,8 +45,7 @@ const presentations = [
     type: 'Poster',
   },
   {
-    authors:
-      'Aguilos, M., Sun, G., Liu, N., Zhang, J., Belgado, M., McNulty, S., & King, J.',
+    authors: 'Aguilos, M., Sun, G., Liu, N., Zhang, J., Belgado, M., McNulty, S., & King, J.',
     date: 'December 2025',
     title:
       'Modeling evapotranspiration dynamics across southeastern U.S. ecosystems using flux data and machine learning',
@@ -47,28 +54,11 @@ const presentations = [
   },
 ]
 
-const inPreparation = [
-  {
-    title:
-      'Characterization of summer hourly extreme precipitation in the Yangtze River Basin',
-    expected: 'Expected 2026',
-    summary:
-      'Analysis of extreme hourly precipitation events combining observations with CMIP6 simulations for anthropogenic attribution.',
-  },
-  {
-    title:
-      'Dynamic regime transitions and POC/SOC partitioning of urban organic aerosols in Shanghai',
-    expected: 'Expected 2026',
-    summary:
-      'PCA-GMM clustering and transition-matrix diagnostics to identify aerosol dynamic regimes, quantify residence time, stationary distribution, and switching behaviour across episodes.',
-  },
-]
-
 export default function Publications() {
   return (
     <SiteLayout
       title="Publications"
-      lead="Journal articles, conference presentations, and manuscripts in preparation. See also my ORCID profile."
+      lead="Published journal articles and conference presentations."
     >
       <h2>Journal articles</h2>
       <ul className="archive__list">
@@ -96,7 +86,7 @@ export default function Publications() {
       <h2>Conference presentations</h2>
       <ul className="archive__list">
         {presentations.map((item) => (
-          <li className="archive__item" key={item.title}>
+          <li className="archive__item" key={`${item.venue}-${item.date}`}>
             <h3 className="archive__item-title">{item.title}</h3>
             <p className="archive__item-meta">
               {item.authors} · <em>{item.venue}</em> · {item.type} · {item.date}
@@ -108,17 +98,6 @@ export default function Publications() {
                 </figure>
               </div>
             )}
-          </li>
-        ))}
-      </ul>
-
-      <h2>Manuscripts in preparation</h2>
-      <ul className="archive__list">
-        {inPreparation.map((item) => (
-          <li className="archive__item" key={item.title}>
-            <h3 className="archive__item-title">{item.title}</h3>
-            <p className="archive__item-meta">In preparation · {item.expected}</p>
-            <p className="archive__item-excerpt">{item.summary}</p>
           </li>
         ))}
       </ul>

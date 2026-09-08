@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Mail, Github, Linkedin, FileText, MapPin, GraduationCap, Fingerprint } from 'lucide-react'
+import { Mail, Github, Linkedin, FileText, MapPin, GraduationCap } from 'lucide-react'
 import { SITE, NAV } from '@/lib/site'
 
 function Masthead() {
@@ -57,10 +57,10 @@ function AuthorSidebar() {
         <h2 className="author__name">{SITE.name}</h2>
         <p className="author__pronouns">{SITE.nameCn}</p>
         <p className="author__bio">
-          Undergraduate in Atmospheric Science at <strong>Nanjing University</strong>,
-          currently on exchange at <strong>HKUST</strong>. I work on atmospheric
-          chemistry, climate extremes, and interpretable machine learning for the
-          Earth system.
+          Visiting research intern at <strong>Stanford</strong>, in the Sino-Finnish
+          dual-degree program at <strong>Nanjing University</strong> and the{' '}
+          <strong>University of Helsinki</strong>. I work on atmospheric chemistry,
+          urban air quality, BVOCs, and observation-driven machine learning.
         </p>
         <ul className="author__urls">
           <li>
@@ -68,7 +68,7 @@ function AuthorSidebar() {
               style={{ display: 'flex', alignItems: 'center', gap: '0.6em', fontSize: '0.83rem' }}
             >
               <GraduationCap size={16} strokeWidth={1.75} style={{ color: 'var(--ap-muted)' }} />
-              Nanjing University
+              Stanford University
             </span>
           </li>
           <li>
@@ -83,12 +83,6 @@ function AuthorSidebar() {
             <a href={`mailto:${SITE.email}`}>
               <Mail size={16} strokeWidth={1.75} />
               Email
-            </a>
-          </li>
-          <li>
-            <a href={SITE.orcid} target="_blank" rel="noreferrer noopener">
-              <Fingerprint size={16} strokeWidth={1.75} />
-              ORCID
             </a>
           </li>
           <li>
@@ -120,11 +114,10 @@ function SiteFooter() {
     <footer className="page__footer">
       <div className="page__footer-inner">
         <div>
-          © {new Date().getFullYear()} {SITE.name}. Last updated August 2026.
+          © {new Date().getFullYear()} {SITE.name}. Last updated September 2026.
         </div>
         <div className="footer__links">
           <a href={`mailto:${SITE.email}`}>Email</a>
-          <a href={SITE.orcid} target="_blank" rel="noreferrer noopener">ORCID</a>
           <a href={SITE.github} target="_blank" rel="noreferrer noopener">GitHub</a>
           <a href={SITE.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn</a>
         </div>
