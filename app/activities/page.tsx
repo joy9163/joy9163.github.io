@@ -57,23 +57,39 @@ const engagement: Entry[] = [
 
 const service: Entry[] = [
   {
+    title: 'Standing Representative',
+    organization: 'Nanjing University Student Representative Congress',
+    period: '2024 – 2026',
+    description:
+      'Serve three consecutive terms (2024, 2025, and 2026), including the 28th and 29th congresses. Represent student interests and contribute to university-level student affairs and campus initiatives.',
+    photos: [
+      '/activities/student-congress/photo1.jpg',
+      '/activities/student-congress/photo2.jpg',
+    ],
+  },
+  {
+    title: 'Class Monitor',
+    organization: 'Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences',
+    period: '09/2024 – 09/2025',
+    description:
+      'Organised academic, social, and intercollegiate activities for undergraduate students.',
+    photos: ['/activities/class-monitor/photo1.jpg'],
+  },
+  {
+    title: 'Outstanding Research Report',
+    organization: 'Nanjing University Summer Social Practice Program',
+    period: '2024',
+    description:
+      'Awarded Outstanding Research Report in the university summer social practice program.',
+    photos: ['/activities/class-monitor/photo2.jpg'],
+  },
+  {
     title: 'Student Ambassador',
     organization: 'Global Training Initiative, North Carolina State University',
     period: '02/2025 – Present',
     description:
       'Facilitate communication between faculty and students and support international academic engagement.',
     photos: ['/activities/ncsu/photo1.JPG'],
-  },
-  {
-    title: 'Standing Representative',
-    organization: 'Nanjing University Student Representative Congress',
-    period: '2024 – 2026',
-    description:
-      'Serve three consecutive terms (2024, 2025, and 2026). Represent student interests and contribute to university-level student affairs and campus initiatives.',
-    photos: [
-      '/activities/student-congress/photo1.jpg',
-      '/activities/student-congress/photo2.jpg',
-    ],
   },
   {
     title: 'Guzheng Performer',
@@ -85,17 +101,6 @@ const service: Entry[] = [
       '/activities/guzheng/photo1.jpg',
       '/activities/guzheng/photo2.jpg',
       '/activities/guzheng/photo3.jpg',
-    ],
-  },
-  {
-    title: 'Class Monitor',
-    organization: 'Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences',
-    period: '09/2024 – 09/2025',
-    description:
-      'Organised academic, social, and intercollegiate activities for undergraduate students.',
-    photos: [
-      '/activities/class-monitor/photo1.jpg',
-      '/activities/class-monitor/photo2.jpg',
     ],
   },
 ]
@@ -143,7 +148,7 @@ export default function Activities() {
   return (
     <SiteLayout
       title="Activities"
-      lead="Competitions, international engagement, and student leadership alongside research."
+      lead="Competitions, international engagement, student leadership, and social practice alongside research."
     >
       <h2>Competitions</h2>
       <EntryList entries={competitions} />
