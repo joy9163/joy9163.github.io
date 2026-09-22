@@ -18,7 +18,7 @@ const education: Row[] = [
     title: 'B.S. in Atmospheric Science',
     subtitle: 'Nanjing University and University of Helsinki',
     description:
-      'Sino-Finnish dual-degree program, Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences. Overall GPA: 4.58/5.00 (91.6/100) | Rank: 2/78',
+      'Sino-Finnish dual-degree program, Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences. Overall GPA: 4.58/5.00 (91.6/100) | Rank: 3/78',
   },
   {
     period: '09/2025 – 12/2025',

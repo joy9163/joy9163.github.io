@@ -34,7 +34,7 @@ const education = [
     period: '09/2023 – Present',
     title: 'B.S. in Atmospheric Science',
     subtitle: 'Nanjing University and University of Helsinki',
-    note: 'Sino-Finnish dual-degree program, Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences. Overall GPA: 4.58/5.00 (91.6/100) | Rank: 2/78',
+    note: 'Sino-Finnish dual-degree program, Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences. Overall GPA: 4.58/5.00 (91.6/100) | Rank: 3/78',
   },
   {
     period: '09/2025 – 12/2025',
