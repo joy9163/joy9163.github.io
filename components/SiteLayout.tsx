@@ -57,7 +57,8 @@ function AuthorSidebar() {
         <h2 className="author__name">{SITE.name}</h2>
         <p className="author__pronouns">{SITE.nameCn}</p>
         <p className="author__bio">
-          Visiting research intern at <strong>Stanford</strong>, in the Sino-Finnish
+          Undergraduate visiting researcher at <strong>Duke</strong> and{' '}
+          <strong>Stanford</strong>, in the Sino-Finnish
           dual-degree program at <strong>Nanjing University</strong> and the{' '}
           <strong>University of Helsinki</strong>. I work on atmospheric chemistry,
           urban air quality, BVOCs, and observation-driven machine learning.
@@ -68,7 +69,7 @@ function AuthorSidebar() {
               style={{ display: 'flex', alignItems: 'center', gap: '0.6em', fontSize: '0.83rem' }}
             >
               <GraduationCap size={16} strokeWidth={1.75} style={{ color: 'var(--ap-muted)' }} />
-              Stanford University
+              Duke University · Stanford University
             </span>
           </li>
           <li>

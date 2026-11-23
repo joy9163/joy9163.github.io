@@ -31,22 +31,24 @@ const education: Row[] = [
 const research: Row[] = [
   {
     period: '07/2026 – Present',
-    title: 'Observation-constrained reconstruction of high-resolution urban isoprene emissions',
-    subtitle: 'Advisor: Prof. Yuan Wang, Stanford University',
+    title: 'Observation-constrained, physics-informed machine learning for urban isoprene emissions in New York City',
+    subtitle:
+      'Undergraduate Visiting Researcher, Stanford University and Duke University. Advisors: Prof. Yuan Wang (Stanford, since July 2026) and Prof. Liyin He (Duke, since October 2026)',
     items: [
-      'Built a unified high-resolution spatiotemporal framework for New York City by integrating TEMPO HCHO/NO2, meteorology, vegetation, land cover, anthropogenic emissions, and urban BVOC emission estimates',
-      'Developed a hybrid machine-learning model to reconstruct hourly isoprene emissions using observation-constrained information and high-resolution emission priors',
-      'Designed temporal and spatial block validation, residual-learning diagnostics, and uncertainty analyses to evaluate reconstruction skill and generalizability',
+      'Using a 30-m NYC inventory (Wei et al., 2024) as reference, built a LightGBM emulator (city-day R² = 0.878 on unseen dates) that tracked daily variability better than EPA BEIS; TROPOMI HCHO cut city MAE by 8.4%',
+      'Designed blocked and rolling validation that exposed hot-day extrapolation failure; blending in the analytic MEGAN temperature response raised hot-day peak recovery from 75% to 85%',
+      'With Prof. He, extended this to six summers (2019–2024) of hourly Bronx isoprene: pure ML explained ~67% of held-out variance, 10 points above MEGAN3.1, but under unseen heat hybrids kept R² = 0.62 vs. 0.32',
+      'Re-implemented the MEGAN3.1 isoprene activity in PyTorch, reproducing the original fluxes to machine precision, to learn its response parameters from concentration data',
     ],
   },
   {
-    period: '12/2025 – Present',
-    title: 'Regime transitions and POC/SOC partitioning of urban organic aerosols in Shanghai',
-    subtitle: 'Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, HKUST',
+    period: '09/2025 – Present',
+    title: 'Regime-aware POC/SOC partitioning of urban organic aerosols in Hong Kong and Shanghai',
+    subtitle: 'Research Assistant. Advisors: Prof. Jianzhen Yu and Prof. Lixue Cheng, HKUST',
     items: [
-      'Characterized regime-dependent temporal dynamics and carbon partitioning of Shanghai urban organic aerosols from long-term observations',
-      'Implemented PCA–GMM clustering and transition-matrix diagnostics to quantify regime residence times, stationary distributions, and switching across pollution episodes',
-      'Evaluated inferred POC/SOC fractions against literature constraints and examined data-driven prediction of regime evolution',
+      'Built RAMCARB (regime-aware OC/EC baselines) on hourly Hong Kong data and applied it to Shanghai, 2013–2024',
+      'Used PCA–GMM clustering and transition matrices to quantify regime residence, stationarity and switching',
+      'Evaluated POC/SOC fractions against literature constraints and tested data-driven prediction of regime evolution',
     ],
   },
   {
@@ -84,25 +86,32 @@ const research: Row[] = [
 ]
 
 const awards: Row[] = [
+  { period: '2026–2027', title: 'Zheng-Gang Elite Scholarship', subtitle: 'Nanjing University' },
+  { period: '2026', title: 'Excellent Presentation Award', subtitle: '2nd Future Atmospheric Science Forum' },
   {
     period: '2025–2026',
     title: 'Zheng-Gang Scholarship for Overseas Study',
     subtitle: 'Nanjing University (Top 2%)',
   },
   {
-    period: '2025–2026',
+    period: '2025–2027',
     title: 'Renmin Scholarship',
-    subtitle: 'Nanjing University',
+    subtitle: 'Nanjing University, 2026–2027 and 2025–2026 (Top 5%)',
+  },
+  {
+    period: '2025',
+    title: 'Best Oral Presentation',
+    subtitle: '1st Nanjing University Forum for Top-Notch Students in Atmospheric Sciences',
   },
   {
     period: '2024–2025',
-    title: 'Yan Baoling Scholarship for Overseas Exchange (Excellence Award)',
+    title: 'Yan Baoling Scholarship for Overseas Exchange (Excellence Award, 10/4,000)',
     subtitle: 'Nanjing University',
   },
   {
     period: '2023–2025',
     title: 'Outstanding Student',
-    subtitle: 'Nanjing University (2023–2024 and 2024–2025)',
+    subtitle: 'Nanjing University (Top 5%), 2023–2024 and 2024–2025',
   },
   {
     period: '2023–2024',
@@ -130,7 +139,7 @@ const service: Row[] = [
   {
     period: '2024 – 2026',
     title: 'Standing Representative',
-    subtitle: 'Nanjing University Student Representative Congress',
+    subtitle: 'Nanjing University Student Representative Congress (three terms)',
   },
   {
     period: '09/2024 – 09/2025',

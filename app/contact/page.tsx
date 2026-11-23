@@ -27,7 +27,7 @@ export default function Contact() {
               <br />
               Nanjing University &amp; University of Helsinki
               <br />
-              Currently a visiting research intern at Stanford University
+              Undergraduate visiting researcher at Duke University (since October 2026) and Stanford University (since July 2026)
             </p>
           </div>
         </li>

@@ -17,24 +17,24 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: 'Observation-constrained reconstruction of high-resolution urban isoprene emissions',
+    title: 'Observation-constrained, physics-informed machine learning for urban isoprene emissions in New York City',
     period: '07/2026 – Present',
-    role: 'Undergraduate Visiting Research Intern',
-    advisor: 'Prof. Yuan Wang',
-    affiliation: 'Stanford University',
+    role: 'Undergraduate Visiting Researcher',
+    advisor: 'Prof. Yuan Wang (Stanford, since July 2026) and Prof. Liyin He (Duke, since October 2026)',
+    affiliation: 'Stanford University and Duke University',
     description:
-      'Built a unified high-resolution spatiotemporal framework for New York City by integrating TEMPO HCHO/NO2, meteorology, vegetation, land cover, anthropogenic emissions, and urban BVOC emission estimates. Developing a hybrid machine-learning model to reconstruct hourly isoprene emissions using observation-constrained information and high-resolution emission priors, with temporal and spatial block validation, residual-learning diagnostics, and uncertainty analyses.',
-    keywords: ['Urban isoprene', 'BVOCs', 'TEMPO', 'Machine learning', 'New York City'],
+      'Using a 30-m New York City inventory (Wei et al., 2024) as reference, built a LightGBM emulator (city-day R² = 0.878 on unseen dates) that tracked daily variability better than EPA BEIS; adding TROPOMI HCHO cut city-total MAE by 8.4%. Designed blocked and rolling validation that exposed hot-day extrapolation failure; blending in the analytic MEGAN temperature response raised hot-day peak recovery from 75% to 85%. With Prof. He, extended this to six summers (2019–2024) of hourly Bronx isoprene observations: pure ML explained about 67% of held-out variance, 10 points above MEGAN3.1, but under unseen heat hybrid models kept R² = 0.62 vs. 0.32. Re-implemented the MEGAN3.1 isoprene activity in PyTorch, reproducing the original fluxes to machine precision, to learn its response parameters from concentration data. First-author poster at AGU26 (December 2026).',
+    keywords: ['Urban isoprene', 'BVOCs', 'TROPOMI HCHO', 'MEGAN', 'Hybrid machine learning', 'New York City'],
   },
   {
-    title: 'Regime transitions and POC/SOC partitioning of urban organic aerosols in Shanghai',
-    period: '12/2025 – Present',
+    title: 'Regime-aware POC/SOC partitioning of urban organic aerosols in Hong Kong and Shanghai',
+    period: '09/2025 – Present',
     role: 'Research Assistant',
     advisor: 'Prof. Jianzhen Yu and Prof. Lixue Cheng',
     affiliation: 'The Hong Kong University of Science and Technology',
     description:
-      'Characterized regime-dependent temporal dynamics and carbon partitioning of Shanghai urban organic aerosols from long-term observations. Implemented PCA–GMM clustering and transition-matrix diagnostics to quantify regime residence times, stationary distributions, and switching across pollution episodes. Evaluated inferred POC/SOC fractions against literature constraints and examined data-driven prediction of regime evolution.',
-    keywords: ['Organic aerosol', 'PCA-GMM', 'POC/SOC partitioning', 'Markov transition matrix', 'Shanghai'],
+      'Built RAMCARB (regime-aware OC/EC baselines) on hourly Hong Kong data and applied it to Shanghai, 2013–2024. Used PCA–GMM clustering and transition matrices to quantify regime residence, stationarity, and switching. Evaluated POC/SOC fractions against literature constraints and tested data-driven prediction of regime evolution. Co-author of a poster and oral presentation at IAC 2026 (Xi’an, September 2026); two manuscripts in preparation.',
+    keywords: ['Organic aerosol', 'RAMCARB', 'PCA-GMM', 'POC/SOC partitioning', 'Hong Kong', 'Shanghai'],
   },
   {
     title: 'Boreal-forest new particle formation and multi-site particle number size distributions',
@@ -49,7 +49,7 @@ const projects: Project[] = [
   {
     title: 'Sentinella',
     period: '07/2025 – 08/2026',
-    role: 'Project member',
+    role: 'Team leader',
     affiliation: 'Asian Climate–SDG Technology Innovation Hackathon / CICSIC Finland Regional',
     description:
       'An integrated digital-twin system for hyperlocal-scale climate and public-health risk. Developed an urban digital-twin platform that integrates hydrodynamic, epidemiological, and community-intelligence data to support flooding and epidemic prevention. Selected as a finalist of the 2025 Asian Climate–SDG Technology Innovation Hackathon (ACTION) and invited to present at COP30 in Belém. Received First Prize at the Finland regional of the 2026 China International College Students’ Innovation Competition (US$3,000 award).',

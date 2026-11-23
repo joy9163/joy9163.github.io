@@ -4,24 +4,36 @@ import Link from 'next/link'
 
 const news = [
   {
+    date: 'Oct 2026',
+    text: 'Began visiting research at Duke University with Prof. Liyin He, extending the New York City isoprene work to six summers of hourly Bronx observations and hybrid physics–machine-learning models.',
+  },
+  {
+    date: 'Oct 2026',
+    text: 'Awarded the Zheng-Gang Elite Scholarship, Nanjing University (2026–2027).',
+  },
+  {
     date: 'Aug 2026',
     text: 'First Prize at the Finland regional of the China International College Students’ Innovation Competition (CICSIC) for project Sentinella (US$3,000 award).',
   },
   {
     date: 'Jul 2026',
-    text: 'Started a visiting research internship at Stanford University with Prof. Yuan Wang on observation-constrained reconstruction of urban isoprene emissions.',
+    text: 'Began visiting research at Stanford University with Prof. Yuan Wang on observation-constrained machine learning for urban isoprene emissions in New York City.',
   },
   {
     date: 'Jul 2026',
     text: 'Selected delegate, UNITAR & Nanjing University UN Immersion Programme, Palais des Nations, Geneva.',
   },
   {
+    date: 'Feb 2026',
+    text: 'Honorable Mention, Interdisciplinary Contest in Modeling (ICM), COMAP.',
+  },
+  {
     date: 'Nov 2025',
     text: 'Invited to present Sentinella at COP30 in Belém after selection as a finalist of the 2025 Asian Climate–SDG Technology Innovation Hackathon.',
   },
   {
-    date: 'Dec 2025',
-    text: 'Began research on urban organic-aerosol regime transitions and POC/SOC partitioning in Shanghai at HKUST.',
+    date: 'Sep 2025',
+    text: 'Began research at HKUST with Prof. Jianzhen Yu and Prof. Lixue Cheng on regime-aware POC/SOC partitioning of urban organic aerosols in Hong Kong and Shanghai.',
   },
   {
     date: 'Aug 2025',
@@ -51,15 +63,16 @@ export default function AboutContent() {
         I am an undergraduate researcher in atmospheric science in the Sino-Finnish
         dual-degree program at <strong>Nanjing University</strong> and the{' '}
         <strong>University of Helsinki</strong> (Nanjing–Helsinki Institute in
-        Atmospheric and Earth System Sciences). I am currently a visiting research
-        intern at <strong>Stanford University</strong>, working with Prof. Yuan Wang
-        on observation-constrained reconstruction of high-resolution urban isoprene
-        emissions.
+        Atmospheric and Earth System Sciences). I am currently an undergraduate
+        visiting researcher at <strong>Duke University</strong> with Prof. Liyin He
+        (since October 2026) and at <strong>Stanford University</strong> with Prof.
+        Yuan Wang (since July 2026), working on observation-constrained,
+        physics-informed machine learning for urban isoprene emissions.
       </p>
       <p>
         My research focuses on atmospheric chemistry, urban air quality, biogenic
         volatile organic compounds (BVOCs), and observation-driven machine learning.
-        Recent work includes urban organic-aerosol regime analysis in Shanghai,
+        Recent work includes regime-aware organic-aerosol analysis in Hong Kong and Shanghai,
         boreal-forest new particle formation from multi-site particle number size
         distributions, and hydrological controls on tree-mortality risk in
         southeastern U.S. forests.

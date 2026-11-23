@@ -20,6 +20,22 @@ const journalArticles = [
 
 const presentations = [
   {
+    authors: 'Zhang, J., Wang, Y., Wang, Y., & Wei, D.',
+    date: 'December 2026',
+    title:
+      'Observation-constrained reconstruction of high-resolution urban isoprene emissions using machine learning',
+    venue: 'AGU Annual Meeting 2026 (AGU26), San Francisco, USA',
+    type: 'Poster (scheduled)',
+  },
+  {
+    authors: 'Ji, H., Zhang, J., Liao, K., Cheng, L., & Yu, J. Z.',
+    date: 'September 2026',
+    title:
+      'Machine-learned chemical–meteorological regimes for quantifying secondary organic carbon in PM2.5',
+    venue: '12th International Aerosol Conference (IAC 2026), Xi’an, China',
+    type: 'Poster & oral presentation',
+  },
+  {
     authors: 'Zhang, J.',
     date: 'April 2026',
     title:
