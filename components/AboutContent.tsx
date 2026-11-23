@@ -2,45 +2,6 @@
 
 import Link from 'next/link'
 
-const news = [
-  {
-    date: 'Oct 2026',
-    text: 'Began visiting research at Duke University with Prof. Liyin He, extending the New York City isoprene work to six summers of hourly Bronx observations and hybrid physics–machine-learning models.',
-  },
-  {
-    date: 'Oct 2026',
-    text: 'Awarded the Zheng-Gang Elite Scholarship, Nanjing University (2026–2027).',
-  },
-  {
-    date: 'Aug 2026',
-    text: 'First Prize at the Finland regional of the China International College Students’ Innovation Competition (CICSIC) for project Sentinella (US$3,000 award).',
-  },
-  {
-    date: 'Jul 2026',
-    text: 'Began visiting research at Stanford University with Prof. Yuan Wang on observation-constrained machine learning for urban isoprene emissions in New York City.',
-  },
-  {
-    date: 'Jul 2026',
-    text: 'Selected delegate, UNITAR & Nanjing University UN Immersion Programme, Palais des Nations, Geneva.',
-  },
-  {
-    date: 'Feb 2026',
-    text: 'Honorable Mention, Interdisciplinary Contest in Modeling (ICM), COMAP.',
-  },
-  {
-    date: 'Nov 2025',
-    text: 'Invited to present Sentinella at COP30 in Belém after selection as a finalist of the 2025 Asian Climate–SDG Technology Innovation Hackathon.',
-  },
-  {
-    date: 'Sep 2025',
-    text: 'Began research at HKUST with Prof. Jianzhen Yu and Prof. Lixue Cheng on regime-aware POC/SOC partitioning of urban organic aerosols in Hong Kong and Shanghai.',
-  },
-  {
-    date: 'Aug 2025',
-    text: 'Co-authored a paper in Forests on early-warning thresholds for tree-mortality risk in southeastern U.S. bottomland hardwood wetlands.',
-  },
-]
-
 const education = [
   {
     period: '09/2023 – Present',
@@ -112,18 +73,6 @@ export default function AboutContent() {
               <p className="cv__title">{item.title}</p>
               <p className="cv__subtitle">{item.subtitle}</p>
               <p>{item.note}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <h2>News</h2>
-      <ul className="cv__list">
-        {news.map((item) => (
-          <li className="cv__row" key={item.date + item.text.slice(0, 12)}>
-            <div className="cv__period">{item.date}</div>
-            <div className="cv__body">
-              <p style={{ margin: 0 }}>{item.text}</p>
             </div>
           </li>
         ))}
