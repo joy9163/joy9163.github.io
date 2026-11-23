@@ -26,18 +26,6 @@ export default function Contact() {
               Nanjing–Helsinki Institute in Atmospheric and Earth System Sciences
               <br />
               Nanjing University &amp; University of Helsinki
-              <br />
-              Undergraduate visiting researcher at Duke University (since October 2026) and Stanford University (since July 2026)
-            </p>
-          </div>
-        </li>
-        <li className="cv__row">
-          <div className="cv__period">ORCID</div>
-          <div className="cv__body">
-            <p style={{ margin: 0 }}>
-              <a href={SITE.orcid} target="_blank" rel="noreferrer noopener">
-                0009-0003-6894-2678
-              </a>
             </p>
           </div>
         </li>

@@ -52,7 +52,7 @@ const education = [
     period: '09/2025 – 12/2025',
     title: 'Undergraduate Exchange Program',
     subtitle: 'The Hong Kong University of Science and Technology',
-    note: 'Atmospheric Science / Environmental Science',
+    note: 'Department of Chemistry',
   },
 ]
 
@@ -65,8 +65,8 @@ export default function AboutContent() {
         <strong>University of Helsinki</strong> (Nanjing–Helsinki Institute in
         Atmospheric and Earth System Sciences). I am currently an undergraduate
         visiting researcher at <strong>Duke University</strong> with Prof. Liyin He
-        (since October 2026) and at <strong>Stanford University</strong> with Prof.
-        Yuan Wang (since July 2026), working on observation-constrained,
+        and at <strong>Stanford University</strong> with Prof. Yuan Wang, working
+        on observation-constrained,
         physics-informed machine learning for urban isoprene emissions.
       </p>
       <p>

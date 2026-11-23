@@ -24,7 +24,7 @@ const education: Row[] = [
     period: '09/2025 – 12/2025',
     title: 'Undergraduate Exchange Program',
     subtitle: 'The Hong Kong University of Science and Technology',
-    description: 'Atmospheric Science / Environmental Science',
+    description: 'Department of Chemistry',
   },
 ]
 
