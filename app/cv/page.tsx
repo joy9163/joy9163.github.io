@@ -33,7 +33,7 @@ const research: Row[] = [
     period: '07/2026 – Present',
     title: 'Observation-constrained, physics-informed machine learning for urban isoprene emissions in New York City',
     subtitle:
-      'Undergraduate Visiting Researcher, Stanford University and Duke University. Advisors: Prof. Yuan Wang (Stanford, since July 2026) and Prof. Liyin He (Duke, since October 2026)',
+      'Undergraduate Visiting Researcher, Stanford University and Duke University. Advisors: Prof. Yuan Wang (Stanford) and Prof. Liyin He (Duke)',
     items: [
       'Using a 30-m NYC inventory (Wei et al., 2024) as reference, built a LightGBM emulator (city-day R² = 0.878 on unseen dates) that tracked daily variability better than EPA BEIS; TROPOMI HCHO cut city MAE by 8.4%',
       'Designed blocked and rolling validation that exposed hot-day extrapolation failure; blending in the analytic MEGAN temperature response raised hot-day peak recovery from 75% to 85%',

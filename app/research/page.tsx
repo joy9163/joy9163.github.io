@@ -20,7 +20,7 @@ const projects: Project[] = [
     title: 'Observation-constrained, physics-informed machine learning for urban isoprene emissions in New York City',
     period: '07/2026 – Present',
     role: 'Undergraduate Visiting Researcher',
-    advisor: 'Prof. Yuan Wang (Stanford, since July 2026) and Prof. Liyin He (Duke, since October 2026)',
+    advisor: 'Prof. Yuan Wang (Stanford) and Prof. Liyin He (Duke)',
     affiliation: 'Stanford University and Duke University',
     description:
       'Using a 30-m New York City inventory (Wei et al., 2024) as reference, built a LightGBM emulator (city-day R² = 0.878 on unseen dates) that tracked daily variability better than EPA BEIS; adding TROPOMI HCHO cut city-total MAE by 8.4%. Designed blocked and rolling validation that exposed hot-day extrapolation failure; blending in the analytic MEGAN temperature response raised hot-day peak recovery from 75% to 85%. With Prof. He, extended this to six summers (2019–2024) of hourly Bronx isoprene observations: pure ML explained about 67% of held-out variance, 10 points above MEGAN3.1, but under unseen heat hybrid models kept R² = 0.62 vs. 0.32. Re-implemented the MEGAN3.1 isoprene activity in PyTorch, reproducing the original fluxes to machine precision, to learn its response parameters from concentration data. First-author poster at AGU26 (December 2026).',
