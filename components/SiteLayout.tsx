@@ -16,7 +16,6 @@ function Masthead() {
       <div className="masthead__inner-wrap">
         <Link href="/" className="site-title">
           {SITE.name}
-          <span className="site-subtitle">{SITE.tagline}</span>
         </Link>
         <nav className="greedy-nav" aria-label="Main">
           {NAV.map((item) => {
