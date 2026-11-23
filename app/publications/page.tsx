@@ -18,7 +18,16 @@ const journalArticles = [
   },
 ]
 
-const presentations = [
+type Presentation = {
+  authors: string
+  date: string
+  title: string
+  venue: string
+  type: string
+  photo?: string
+}
+
+const presentations: Presentation[] = [
   {
     authors: 'Zhang, J., Wang, Y., Wang, Y., & Wei, D.',
     date: 'December 2026',
@@ -50,7 +59,6 @@ const presentations = [
       'Characterization of summer hourly extreme precipitation and attribution of anthropogenic discharge in the middle and lower Yangtze River Basin',
     venue: 'First Nanjing University Atmospheric Sciences Top Forum, Nanjing, China',
     type: 'Oral presentation',
-    photo: '/publications/nanjing-forum-2025/photo1.jpg',
   },
   {
     authors: 'Aguilos, M., Zhang, J., Belgado, M. L., Sun, G., & King, J.',
