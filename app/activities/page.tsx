@@ -24,6 +24,13 @@ const competitions: Entry[] = [
       'Led the team that developed Sentinella, an integrated digital-twin system for hyperlocal-scale climate and public-health risk, and received First Prize at the Finland regional (US$3,000 award).',
   },
   {
+    title: 'Interdisciplinary Contest in Modeling (ICM)',
+    organization: 'Honorable Mention, COMAP',
+    period: 'Feb 2026',
+    description:
+      'Coupled solar geometry with a 2R2C thermal network and Pareto/TOPSIS optimization for net-zero campus retrofits.',
+  },
+  {
     title: '2025 Asian Climate-SDG Technology Innovation Hackathon',
     organization: 'Finalist; invited presenter at COP30 · Team leader',
     period: '2025',
