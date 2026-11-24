@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { PersonLink } from '@/lib/people'
 
 const education = [
   {
@@ -25,8 +26,8 @@ export default function AboutContent() {
         dual-degree program at <strong>Nanjing University</strong> and the{' '}
         <strong>University of Helsinki</strong> (Nanjing–Helsinki Institute in
         Atmospheric and Earth System Sciences). I am currently an undergraduate
-        visiting researcher at <strong>Duke University</strong> with Prof. Liyin He
-        and at <strong>Stanford University</strong> with Prof. Yuan Wang, working
+        visiting researcher at <strong>Duke University</strong> with Prof. <PersonLink name="Liyin He" />{' '}
+        and at <strong>Stanford University</strong> with Prof. <PersonLink name="Yuan Wang" />, working
         on observation-constrained,
         physics-informed machine learning for urban isoprene emissions.
       </p>

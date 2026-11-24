@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import SiteLayout from '@/components/SiteLayout'
+import { withPeopleLinks } from '@/lib/people'
 import { FileText, Image as ImageIcon } from 'lucide-react'
 
 export const metadata: Metadata = { title: 'Research' }
@@ -145,7 +146,7 @@ export default function Research() {
             <h3 className="archive__item-title">{project.title}</h3>
             <p className="archive__item-meta">
               {project.period} · {project.role}
-              {project.advisor ? ` · ${project.advisor}` : ''}
+              {project.advisor ? <> · {withPeopleLinks(project.advisor)}</> : ''}
               {project.affiliation ? ` · ${project.affiliation}` : ''}
             </p>
             <p className="archive__item-excerpt">{project.description}</p>

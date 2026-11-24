@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import SiteLayout from '@/components/SiteLayout'
+import { withPeopleLinks } from '@/lib/people'
 import { Download } from 'lucide-react'
 
 export const metadata: Metadata = { title: 'CV' }
@@ -156,7 +157,7 @@ function RowList({ rows }: { rows: Row[] }) {
           <div className="cv__period">{row.period}</div>
           <div className="cv__body">
             <p className="cv__title">{row.title}</p>
-            {row.subtitle && <p className="cv__subtitle">{row.subtitle}</p>}
+            {row.subtitle && <p className="cv__subtitle">{withPeopleLinks(row.subtitle)}</p>}
             {row.description && <p>{row.description}</p>}
             {row.items && (
               <ul>
