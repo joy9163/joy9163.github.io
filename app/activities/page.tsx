@@ -17,19 +17,19 @@ type Entry = {
 const competitions: Entry[] = [
   {
     title: 'China International College Students’ Innovation Competition (CICSIC)',
-    organization: 'First Prize, Finland Regional',
+    organization: 'First Prize, Finland Regional · Team leader',
     period: 'Aug 2026',
     location: 'Finland',
     description:
-      'First Prize at the Finland regional for project Sentinella, an integrated digital-twin system for hyperlocal-scale climate and public-health risk (US$3,000 award).',
+      'Led the team that developed Sentinella, an integrated digital-twin system for hyperlocal-scale climate and public-health risk, and received First Prize at the Finland regional (US$3,000 award).',
   },
   {
     title: '2025 Asian Climate-SDG Technology Innovation Hackathon',
-    organization: 'Finalist; invited presenter at COP30',
+    organization: 'Finalist; invited presenter at COP30 · Team leader',
     period: '2025',
     location: 'Hong Kong & Belém, Brazil (COP30)',
     description:
-      'Selected as a finalist and invited to showcase Sentinella at a roadshow in Hong Kong, then to present at the UN Climate Change Conference (COP30) in Belém.',
+      'Sentinella was selected as one of five finalists and showcased at a roadshow in Hong Kong; I then presented it on behalf of the team at the China Pavilion, UN Climate Change Conference (COP30), Belém.',
     items: [
       'Developed an urban digital-twin platform designed to safeguard public health against climate-related risks',
       'Integrated hydrodynamic, epidemiological, and community intelligence data',

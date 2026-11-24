@@ -48,15 +48,6 @@ const projects: Project[] = [
     keywords: ['New particle formation', 'Particle number size distribution', 'N50', 'ENSO', 'SMEAR II'],
   },
   {
-    title: 'Sentinella',
-    period: '07/2025 – 08/2026',
-    role: 'Team leader',
-    affiliation: 'Asian Climate–SDG Technology Innovation Hackathon / CICSIC Finland Regional',
-    description:
-      'An integrated digital-twin system for hyperlocal-scale climate and public-health risk. Developed an urban digital-twin platform that integrates hydrodynamic, epidemiological, and community-intelligence data to support flooding and epidemic prevention. Selected as a finalist of the 2025 Asian Climate–SDG Technology Innovation Hackathon (ACTION) and invited to present at COP30 in Belém. Received First Prize at the Finland regional of the 2026 China International College Students’ Innovation Competition (US$3,000 award).',
-    keywords: ['Digital twin', 'Climate risk', 'Public health', 'COP30', 'CICSIC'],
-  },
-  {
     title:
       'Characterization of summer hourly extreme precipitation and attribution of anthropogenic discharge in the middle and lower Yangtze River Basin',
     period: '11/2024 – 07/2025',
